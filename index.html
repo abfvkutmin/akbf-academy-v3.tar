@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#01696f" />
+  <meta name="description" content="АКБФ Академия Инвестиций — брендированное интерактивное PWA-обучение по инвестициям с уроками, тестами, виджетами и сертификатом." />
+  <title>АКБФ Академия Инвестиций — v3</title>
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Перейти к содержимому</a>
+
+  <div class="splash" id="splashScreen" aria-hidden="true">
+    <div class="splash-card">
+      <div class="splash-logo">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <path d="M12 46L28 16L34 28L42 16L52 46" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 38H44" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="splash-title">АКБФ Академия</div>
+      <div class="splash-sub">Запуск учебного PWA-приложения</div>
+      <div class="loader"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <div class="onboarding-backdrop hidden" id="onboardingBackdrop"></div>
+  <section class="onboarding hidden" id="onboardingModal" aria-labelledby="onboardingTitle" aria-modal="true" role="dialog">
+    <div class="onboarding-header">
+      <div>
+        <div class="eyebrow">Добро пожаловать</div>
+        <h2 id="onboardingTitle">АКБФ Академия Инвестиций</h2>
+      </div>
+      <button class="icon-btn" id="closeOnboarding" aria-label="Закрыть окно">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <p class="onboarding-text">Это брендированная третья версия приложения: с onboarding-экраном, более аккуратным интерфейсом, офлайн-режимом, финальным экраном завершения и экспортом учебного сертификата.</p>
+    <div class="onboarding-grid">
+      <div class="mini-card"><strong>6 уроков</strong><span>Последовательная программа с прогрессом</span></div>
+      <div class="mini-card"><strong>6 виджетов</strong><span>Практика внутри каждого урока</span></div>
+      <div class="mini-card"><strong>Финал курса</strong><span>Экран завершения и CTA</span></div>
+      <div class="mini-card"><strong>Сертификат</strong><span>Экспорт в PNG через браузер</span></div>
+    </div>
+    <div class="btn-row"><button class="btn btn-primary" id="startLearning">Начать обучение</button></div>
+  </section>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Навигация по урокам">
+      <div class="brand">
+        <div class="brand-mark">
+          <div class="brand-logo" aria-label="Логотип АКБФ Академии">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <path d="M12 46L28 16L34 28L42 16L52 46" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 38H44" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="brand-title">АКБФ Академия</div>
+            <div class="brand-sub">Инвестиции, практика и понятная логика</div>
+          </div>
+        </div>
+        <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему"></button>
+      </div>
+
+      <section class="progress-card" aria-labelledby="progress-title">
+        <div class="nav-title" id="progress-title">Прогресс обучения</div>
+        <div style="font-weight:800">Пройдено уроков: <span id="completedLessons">0</span> из 6</div>
+        <div class="progress-bar" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-meta"><span>Тестов решено: <span id="completedTests">0</span>/6</span><span id="progressPercent">0%</span></div>
+        <div class="btn-row">
+          <button class="btn btn-secondary" id="resetProgress">Сбросить прогресс</button>
+          <button class="btn btn-primary" id="installApp" disabled>Установить</button>
+        </div>
+      </section>
+
+      <section class="progress-card certificate-card">
+        <div class="nav-title">Финал</div>
+        <p class="panel-intro" style="margin-bottom:var(--space-3)">После завершения всех тестов можно открыть экран окончания курса и скачать сертификат.</p>
+        <div class="btn-row">
+          <button class="btn btn-ghost" id="openCompletion">Открыть финальный экран</button>
+        </div>
+      </section>
+
+      <nav>
+        <div class="nav-title">Уроки</div>
+        <div class="lesson-nav" id="lessonNav"></div>
+      </nav>
+    </aside>
+
+    <div class="content">
+      <header class="header">
+        <div style="display:flex;align-items:center;gap:var(--space-3)">
+          <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+          <div>
+            <h1 id="pageTitle">АКБФ Академия Инвестиций</h1>
+            <p id="pageSubtitle">6 уроков, практика, тесты и финальный результат</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <div class="chip" id="offlineBadge">Онлайн</div>
+          <div class="chip"><span id="lessonChip">Урок 1 из 6</span></div>
+          <button class="btn btn-ghost desktop-only" id="showOnboarding">О проекте</button>
+        </div>
+      </header>
+
+      <main class="main" id="main">
+        <section class="hero-grid">
+          <article class="hero-card hero-card-premium">
+            <div class="hero-topline">
+              <div class="chip">АКБФ • Академия инвестиций</div>
+              <div class="hero-dot"></div>
+            </div>
+            <h2>Более зрелая версия учебного PWA для публикации и встраивания</h2>
+            <p>Третья версия усиливает UX: стартовый splash screen, onboarding, улучшенный брендированный интерфейс, финальный экран прохождения курса и учебный сертификат для скачивания.</p>
+            <div class="hero-stats">
+              <div class="stat"><div class="stat-label">Уроков</div><div class="stat-value">6</div></div>
+              <div class="stat"><div class="stat-label">Offline</div><div class="stat-value">Да</div></div>
+              <div class="stat"><div class="stat-label">Сертификат</div><div class="stat-value">PNG</div></div>
+            </div>
+          </article>
+          <section class="panel" aria-labelledby="overview-title">
+            <h3 id="overview-title">Что изменилось в v3</h3>
+            <p class="panel-intro">Сборка стала ближе к финальному клиентскому продукту и визуально выглядит более аккуратно для банковского и образовательного сценария.</p>
+            <div class="key-tags">
+              <span class="tag">Splash screen</span>
+              <span class="tag">Onboarding</span>
+              <span class="tag">Completion screen</span>
+              <span class="tag">Certificate export</span>
+              <span class="tag">Branded UI</span>
+              <span class="tag">Tilda-ready</span>
+            </div>
+          </section>
+        </section>
+
+        <section class="panel" id="lessonPanel"></section>
+        <section class="panel" id="widgetPanel"></section>
+        <section class="panel" id="testPanel"></section>
+
+        <section class="panel completion-panel hidden" id="completionPanel">
+          <div class="completion-wrap">
+            <div class="completion-copy">
+              <div class="eyebrow">Финальный экран</div>
+              <h3>Курс завершен</h3>
+              <p class="panel-intro">После прохождения всех тестов пользователь видит итоговый экран, может скачать учебный сертификат и перейти к следующему целевому действию.</p>
+              <div class="completion-kpis">
+                <div class="mini-card"><strong id="finalLessons">0/6</strong><span>Уроков пройдено</span></div>
+                <div class="mini-card"><strong id="finalTests">0/6</strong><span>Тестов завершено</span></div>
+                <div class="mini-card"><strong id="finalScore">0</strong><span>Сумма верных ответов</span></div>
+              </div>
+              <div class="btn-row">
+                <button class="btn btn-primary" id="downloadCertificate">Скачать сертификат</button>
+                <button class="btn btn-secondary" id="scrollToLessons">Вернуться к урокам</button>
+              </div>
+            </div>
+            <div class="certificate-preview" id="certificateCard">
+              <div class="certificate-shell">
+                <div class="certificate-top">АКБФ Академия Инвестиций</div>
+                <div class="certificate-title">Сертификат о прохождении</div>
+                <div class="certificate-name">Слушатель учебного модуля</div>
+                <div class="certificate-text">Подтверждается завершение базового курса по инвестициям, включающего уроки по акциям, облигациям, фондам, риск-профилю и ИИС-3.</div>
+                <div class="certificate-bottom">
+                  <div><strong>Формат:</strong><span>PWA-обучение</span></div>
+                  <div><strong>Статус:</strong><span id="certificateStatus">В процессе</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="embed-card">
+          <h3>Код для вставки в Tilda</h3>
+          <p class="panel-intro">URL в `src` нужно заменить на опубликованный адрес GitHub Pages.</p>
+          <div class="codebox" id="embedCode"></div>
+          <p class="footer-note">Третья версия также сохраняет структуру, пригодную для публикации в репозитории.</p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>

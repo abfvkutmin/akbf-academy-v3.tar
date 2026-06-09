@@ -1,4 +1,4 @@
-const CACHE_NAME = 'akbf-academy-cache-v3-fixed';
+const CACHE_NAME = 'akbf-academy-cache-final-20260609';
 const OFFLINE_ASSETS = [
   './',
   './index.html',

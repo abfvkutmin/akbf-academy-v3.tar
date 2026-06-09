@@ -115,12 +115,51 @@ const LESSONS = [
   }
 ];
 
-const STORAGE_KEY = 'akbf-academy-pwa-v2';
+const PRACTICES = {
+  1: {
+    title: 'Соберите финансовый фундамент',
+    text: 'Перед стартом инвестиций проверьте, что у вас есть понятная цель и резерв на непредвиденные расходы.',
+    checks: ['Записал одну финансовую цель с суммой и сроком', 'Рассчитал резерв на 3–6 месяцев расходов', 'Определил комфортную сумму регулярного пополнения']
+  },
+  2: {
+    title: 'Разберите акцию как долю в бизнесе',
+    text: 'Выберите знакомую компанию и оцените ее не как тикер, а как реальный бизнес.',
+    checks: ['Понял, чем компания зарабатывает', 'Проверил, есть ли дивидендная история', 'Записал один фактор роста и один риск']
+  },
+  3: {
+    title: 'Сравните параметры облигации',
+    text: 'Посмотрите на облигацию через цену, купон, срок и надежность эмитента.',
+    checks: ['Проверил срок погашения', 'Сравнил купон и доходность к погашению', 'Оценил кредитный риск эмитента']
+  },
+  4: {
+    title: 'Соберите учебный портфель из фондов',
+    text: 'Попробуйте распределить доли между акциями, облигациями и защитными активами.',
+    checks: ['Сумма долей в портфеле равна 100%', 'В портфеле есть минимум два класса активов', 'Проверил комиссию и состав фонда']
+  },
+  5: {
+    title: 'Определите комфортный уровень риска',
+    text: 'Подумайте, какую просадку вы сможете выдержать без эмоциональной продажи активов.',
+    checks: ['Выбрал допустимую просадку портфеля', 'Понял свой инвестиционный горизонт', 'Сформулировал, когда буду пересматривать портфель']
+  },
+  6: {
+    title: 'Оцените пользу ИИС-3 для своей цели',
+    text: 'Сравните потенциальный налоговый вычет, срок владения и готовность не закрывать счет досрочно.',
+    checks: ['Ввел сумму взноса в калькулятор', 'Понял ограничение базы вычета 400 000 ₽', 'Проверил, подходит ли срок 5 лет для моей цели']
+  },
+  default: {
+    title: 'Закрепите материал',
+    text: 'Выполните короткую проверку перед переходом к тесту.',
+    checks: ['Прочитал материал', 'Проверил ключевые понятия', 'Выполнил расчет в тренажере']
+  }
+};
+
+const STORAGE_KEY = 'akbf-academy-pwa-final-1';
 const appState = {
   activeLesson: 0,
   theme: 'light',
   progress: { lessons: Array(6).fill(false), tests: Array(6).fill(false), scores: Array(6).fill(0) },
   answered: {},
+  practice: {},
   sim: { cash: 100000, shares: 0, avgPrice: 0, price: 124.8, history: [118,120,119,122,121,124,126,125,127,126,128,124.8] }
 };
 
@@ -158,6 +197,7 @@ function safeLoad() {
       appState.progress.tests = data.progress?.tests || Array(6).fill(false);
       appState.progress.scores = data.progress?.scores || Array(6).fill(0);
       appState.answered = data.answered || {};
+      appState.practice = data.practice || {};
       appState.sim = data.sim || appState.sim;
     }
   } catch (_) {}
@@ -207,11 +247,65 @@ function renderLesson() {
     <p class="panel-intro">${lesson.goal}</p>
     <div class="key-tags">${lesson.concepts.map(c=>`<span class="tag">${c}</span>`).join('')}</div>
     <div class="lesson-sections" style="margin-top:var(--space-5)">${lesson.sections.map(s=>`<p>${s}</p>`).join('')}</div>
-    <div class="tip" style="margin-top:var(--space-5)"><strong>${lesson.tipTitle}</strong><p>${lesson.tipText}</p></div>`;
+    <div class="tip" style="margin-top:var(--space-5)"><strong>${lesson.tipTitle}</strong><p>${lesson.tipText}</p></div>
+    ${renderPracticeBlock(lesson)}
+  `;
+  bindPracticeBlock(lesson);
   renderWidget(lesson.widget);
   renderTest(lesson.tests);
   updateProgress();
   safeSave();
+}
+
+function renderPracticeBlock(lesson) {
+  const tasks = PRACTICES[lesson.id] || PRACTICES.default;
+  return `
+    <section class="practice-card" aria-labelledby="practice-title-${lesson.id}">
+      <div class="eyebrow">Практическое задание</div>
+      <h4 id="practice-title-${lesson.id}">${tasks.title}</h4>
+      <p>${tasks.text}</p>
+      <div class="practice-list">
+        ${tasks.checks.map((check, idx) => {
+          const checked = appState.practice?.[lesson.id]?.includes(idx) ? 'checked' : '';
+          return `<label class="practice-check"><input type="checkbox" data-practice="${lesson.id}" data-check="${idx}" ${checked}> <span>${check}</span></label>`;
+        }).join('')}
+      </div>
+      <div class="practice-status" id="practiceStatus-${lesson.id}"></div>
+    </section>
+  `;
+}
+
+function bindPracticeBlock(lesson) {
+  const updateStatus = () => {
+    const tasks = PRACTICES[lesson.id] || PRACTICES.default;
+    const done = appState.practice?.[lesson.id]?.length || 0;
+    const status = document.getElementById(`practiceStatus-${lesson.id}`);
+    if (status) status.textContent = done === tasks.checks.length
+      ? 'Задание выполнено. Отлично — можно переходить к тесту.'
+      : `Выполнено пунктов: ${done} из ${tasks.checks.length}.`;
+  };
+
+  els.lessonPanel.querySelectorAll('[data-practice]').forEach(input => {
+    input.addEventListener('change', () => {
+      const lessonId = String(input.dataset.practice);
+      const checkId = +input.dataset.check;
+      appState.practice[lessonId] = appState.practice[lessonId] || [];
+      if (input.checked && !appState.practice[lessonId].includes(checkId)) appState.practice[lessonId].push(checkId);
+      if (!input.checked) appState.practice[lessonId] = appState.practice[lessonId].filter(x => x !== checkId);
+      safeSave();
+      updateStatus();
+    });
+  });
+
+  updateStatus();
+}
+
+function scrollMainToTop() {
+  const content = document.querySelector('.content');
+  const main = document.getElementById('main');
+  if (content) content.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (main) main.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function renderWidget(type) {
@@ -414,6 +508,7 @@ function initEvents() {
     appState.activeLesson = +btn.dataset.lesson;
     renderLesson();
     els.sidebar.classList.remove('open');
+    setTimeout(scrollMainToTop, 0);
   });
   els.themeToggle.addEventListener('click', ()=>{
     appState.theme = appState.theme === 'dark' ? 'light' : 'dark';
@@ -433,7 +528,8 @@ function initEvents() {
 }
 
 function fillEmbedCode() {
-  els.embedCode.textContent = `<!-- АКБФ Академия PWA с меню: вставить в Tilda, блок T123 -->\n<div id="akbf-academy-wrapper">\n  <iframe\n    id="akbf-academy-iframe"\n    src="https://ВАШ-ЛОГИН.github.io/akbf-academy-next/"\n    allow="clipboard-write"\n    referrerpolicy="no-referrer"\n    loading="lazy">\n  </iframe>\n</div>\n\n<style>\n  #akbf-academy-wrapper { width:100%; height:100vh; min-height:900px; overflow:hidden; background:#f4f7fb; }\n  #akbf-academy-iframe { width:100%; height:100%; border:none; outline:none; display:block; background:#f4f7fb; }\n  @media screen and (max-width:768px) {\n    #akbf-academy-wrapper { width:100vw; height:100svh; min-height:100svh; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); }\n  }\n</style>\n\n<script>\n(function(){function adjust(){var wrapper=document.getElementById('akbf-academy-wrapper'); if(!wrapper) return; if(window.innerWidth<768){wrapper.style.width='100vw';wrapper.style.height='100svh';wrapper.style.minHeight='100svh';wrapper.style.marginLeft='calc(50% - 50vw)';wrapper.style.marginRight='calc(50% - 50vw)';} else {wrapper.style.width='100%';wrapper.style.height='100vh';wrapper.style.minHeight='900px';wrapper.style.marginLeft='0';wrapper.style.marginRight='0';}} window.addEventListener('resize',adjust); window.addEventListener('DOMContentLoaded',adjust); adjust();})();\n<\/script>`;
+  if (!els.embedCode) return;
+  els.embedCode.textContent = `<!-- АКБФ Академия PWA с меню: вставить в Tilda, блок T123 -->\n<div id="akbf-academy-wrapper">\n  <iframe\n    id="akbf-academy-iframe"\n    src="https://abfvkutmin.github.io/akbf-academy-v3.tar/"\n    allow="clipboard-write"\n    referrerpolicy="no-referrer"\n    loading="lazy">\n  </iframe>\n</div>\n\n<style>\n  #akbf-academy-wrapper { width:100%; height:100vh; min-height:900px; overflow:hidden; background:#f4f7fb; }\n  #akbf-academy-iframe { width:100%; height:100%; border:none; outline:none; display:block; background:#f4f7fb; }\n  @media screen and (max-width:768px) {\n    #akbf-academy-wrapper { width:100vw; height:100svh; min-height:100svh; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); }\n  }\n</style>\n\n<script>\n(function(){function adjust(){var wrapper=document.getElementById('akbf-academy-wrapper'); if(!wrapper) return; if(window.innerWidth<768){wrapper.style.width='100vw';wrapper.style.height='100svh';wrapper.style.minHeight='100svh';wrapper.style.marginLeft='calc(50% - 50vw)';wrapper.style.marginRight='calc(50% - 50vw)';} else {wrapper.style.width='100%';wrapper.style.height='100vh';wrapper.style.minHeight='900px';wrapper.style.marginLeft='0';wrapper.style.marginRight='0';}} window.addEventListener('resize',adjust); window.addEventListener('DOMContentLoaded',adjust); adjust();})();\n<\/script>`;
 }
 
 (function init(){
@@ -525,9 +621,7 @@ updateProgress = function(){
   if (typeof updateCompletionPanel === 'function') updateCompletionPanel();
 };
 
-// Дополнительная инициализация v3 должна выполняться после объявления элементов.
-// В исходной сборке этот код только переопределял initEvents уже ПОСЛЕ запуска init(),
-// поэтому splash screen не скрывался и приложение выглядело как «не открывается».
+// Финальная инициализация клиентской версии.
 hideSplash();
 if (!localStorage.getItem('akbf-academy-onboarding-seen')) showOnboarding();
 closeOnboardingBtn?.addEventListener('click', ()=>{ hideOnboarding(); localStorage.setItem('akbf-academy-onboarding-seen','1'); });

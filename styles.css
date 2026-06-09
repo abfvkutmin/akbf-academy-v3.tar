@@ -27,3 +27,34 @@
 .hero-card-premium{position:relative;overflow:hidden}.hero-card-premium:after{content:'';position:absolute;right:-10%;top:-18%;width:220px;height:220px;border-radius:999px;background:radial-gradient(circle, color-mix(in srgb,var(--color-primary) 20%, transparent), transparent 62%);pointer-events:none}.hero-topline{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3)}.hero-dot{width:10px;height:10px;border-radius:999px;background:var(--color-primary);box-shadow:0 0 0 8px color-mix(in srgb,var(--color-primary) 10%, transparent)}
 .completion-panel{background:linear-gradient(145deg,color-mix(in srgb,var(--color-primary) 10%, var(--color-surface-2)),var(--color-surface-2))}.completion-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--space-6);align-items:stretch}.certificate-preview{display:grid;align-items:center}.certificate-shell{height:100%;min-height:360px;padding:var(--space-6);border-radius:1.25rem;background:linear-gradient(180deg,#f8f6f1,#efe7d9);color:#213032;border:1px solid rgba(18,33,38,.08);box-shadow:0 20px 50px rgba(32,27,20,.12);display:grid;grid-template-rows:auto auto auto 1fr auto}.certificate-top{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#476166}.certificate-title{font-size:clamp(1.6rem,1.3rem + 1vw,2.3rem);font-weight:900;line-height:1.1;margin-top:var(--space-5)}.certificate-name{font-size:1.15rem;font-weight:700;margin-top:var(--space-6)}.certificate-text{margin-top:var(--space-4);max-width:44ch;color:#405558}.certificate-bottom{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:var(--space-6)}.certificate-bottom strong{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#60777b}.certificate-bottom span{display:block;margin-top:.2rem;font-weight:700}.desktop-only{display:inline-flex}
 @media (max-width:920px){.completion-wrap{grid-template-columns:1fr}.desktop-only{display:none}.onboarding{padding:var(--space-5)}}@media (max-width:640px){.onboarding-grid,.completion-kpis,.certificate-bottom{grid-template-columns:1fr}.splash-card{padding:var(--space-6)}}
+
+
+/* Final client practice blocks */
+.practice-card{
+  margin-top:var(--space-5);
+  padding:var(--space-5);
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-xl);
+  background:linear-gradient(135deg,var(--color-surface-2),var(--color-surface-offset));
+}
+.practice-card h4{font-size:1.15rem;margin:var(--space-2) 0 var(--space-2);font-weight:900}
+.practice-card p{margin:0 0 var(--space-4);color:var(--color-text-muted)}
+.practice-list{display:grid;gap:var(--space-3)}
+.practice-check{
+  display:flex;
+  gap:var(--space-3);
+  align-items:flex-start;
+  padding:var(--space-3);
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-lg);
+  background:var(--color-surface-2);
+  cursor:pointer;
+}
+.practice-check input{margin-top:.25rem;accent-color:var(--color-primary)}
+.practice-check span{font-weight:650;color:var(--color-text)}
+.practice-status{margin-top:var(--space-4);font-weight:800;color:var(--color-primary)}
+.embed-card{display:none!important}
+@media (max-width:920px){
+  .content{scroll-behavior:smooth}
+  .practice-card{padding:var(--space-4)}
+}

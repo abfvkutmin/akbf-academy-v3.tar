@@ -80,18 +80,18 @@
         </div>
       </section>
 
-      <section class="progress-card certificate-card">
-        <div class="nav-title">Финал</div>
-        <p class="panel-intro" style="margin-bottom:var(--space-3)">После завершения всех тестов можно открыть экран окончания курса и скачать сертификат.</p>
-        <div class="btn-row">
-          <button class="btn btn-ghost" id="openCompletion">Открыть финальный экран</button>
-        </div>
-      </section>
-
       <nav>
         <div class="nav-title">Уроки</div>
         <div class="lesson-nav" id="lessonNav"></div>
       </nav>
+
+      <section class="progress-card certificate-card">
+        <div class="nav-title">Итог курса</div>
+        <p class="panel-intro" id="completionHint" style="margin-bottom:var(--space-3)">Финальный экран и сертификат откроются после прохождения всех 6 тестов.</p>
+        <div class="btn-row">
+          <button class="btn btn-ghost" id="openCompletion" disabled>Открыть финальный экран</button>
+        </div>
+      </section>
     </aside>
 
     <div class="content">
@@ -148,9 +148,9 @@
         <section class="panel completion-panel hidden" id="completionPanel">
           <div class="completion-wrap">
             <div class="completion-copy">
-              <div class="eyebrow">Финальный экран</div>
+              <div class="eyebrow">Итог курса</div>
               <h3>Курс завершен</h3>
-              <p class="panel-intro">После прохождения всех тестов пользователь видит итоговый экран, может скачать учебный сертификат и перейти к следующему целевому действию.</p>
+              <p class="panel-intro">Вы прошли все уроки и проверочные тесты. Теперь можно скачать учебный сертификат и вернуться к нужной теме для повторения.</p>
               <div class="completion-kpis">
                 <div class="mini-card"><strong id="finalLessons">0/6</strong><span>Уроков пройдено</span></div>
                 <div class="mini-card"><strong id="finalTests">0/6</strong><span>Тестов завершено</span></div>

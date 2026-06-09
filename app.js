@@ -5,8 +5,8 @@ const LESSONS = [
     goal: 'После урока вы поймете, какие деньги можно направлять в инвестиции, а какие лучше оставить в резерве.',
     concepts: ['финансовая цель', 'подушка безопасности', 'горизонт инвестирования', 'сложный процент'],
     sections: [
-      'Прежде чем вкладывать деньги на фондовом рынке, важно собрать финансовый фундамент. Инвестиции помогают сохранять и приумножать капитал, но не заменяют регулярный доход и не отменяют риск. Первый шаг — понять, ради какой цели вы инвестируете.',
-      'После формирования резерва можно переходить к цели. Хорошая цель отвечает на четыре вопроса: сколько нужно денег, к какому сроку, какую сумму вы готовы пополнять регулярно и какой риск для вас допустим.',
+      'Начинайте не с выбора акции, а с финансовой цели. Инвестиции работают лучше, когда понятно, зачем вы вкладываете деньги: накопить резерв, сформировать капитал на крупную покупку, подготовиться к будущим расходам или постепенно увеличивать семейные сбережения.',
+      'Хорошая цель отвечает на четыре вопроса: какая сумма нужна, к какому сроку, сколько вы готовы пополнять регулярно и какую просадку сможете выдержать без паники. Такой подход помогает не путать инвестиции с азартной попыткой быстро заработать.',
       'Регулярные вложения запускают эффект сложного процента: полученный доход остается внутри капитала и начинает приносить новый доход. В долгосрочном инвестировании дисциплина часто важнее попыток поймать идеальный момент для покупки.'
     ],
     tipTitle: 'Правило финансовой подушки безопасности',
@@ -24,8 +24,8 @@ const LESSONS = [
     goal: 'После урока вы поймете, что покупка акции — это покупка доли в бизнесе, а не гарантированный процентный доход.',
     concepts: ['акция', 'дивиденды', 'капитализация', 'волатильность'],
     sections: [
-      'Покупая акцию, вы приобретаете небольшую долю в компании. Вы становитесь акционером и можете участвовать в финансовом результате бизнеса, если компания развивается и рынок положительно оценивает ее перспективы.',
-      'Доход по акциям может складываться из двух частей: роста рыночной цены и дивидендов. Но ни рост цены, ни дивиденды не гарантированы: стоимость акций меняется под влиянием отчетности, новостей, ставок, ожиданий инвесторов и общей ситуации в экономике.',
+      'Акция — это не просто цена на экране, а доля в бизнесе. Покупая акцию, вы становитесь совладельцем компании и участвуете в ее финансовом результате: через рост стоимости бумаги и, если компания принимает такое решение, через дивиденды.',
+      'Цена акции может расти и снижаться из-за отчетности, новостей, изменения ставок, ожиданий инвесторов и ситуации в отрасли. Поэтому перед покупкой важно понимать не только потенциальную доходность, но и причины возможной просадки.',
       'Перед покупкой акции полезно понять, чем компания зарабатывает, насколько устойчивы ее прибыль и долг, есть ли дивидендная история и какие риски есть в отрасли.'
     ],
     tipTitle: 'Обыкновенные и привилегированные акции',
@@ -43,8 +43,8 @@ const LESSONS = [
     goal: 'После урока вы поймете, почему купон — не вся доходность облигации и какие риски есть даже у долговых инструментов.',
     concepts: ['номинал', 'купон', 'НКД', 'доходность к погашению', 'ОФЗ'],
     sections: [
-      'Облигация — это долговая ценная бумага. Покупая облигацию, вы фактически даете деньги эмитенту в долг. Эмитентом может быть государство, регион или компания.',
-      'Купон не равен полной доходности. Если облигация покупается ниже или выше номинала, итоговая доходность меняется. Поэтому инвесторы смотрят на доходность к погашению, цену, срок и надежность эмитента.',
+      'Облигацию удобно воспринимать как заем, оформленный в виде ценной бумаги. Инвестор дает деньги эмитенту, а эмитент обязуется платить купоны и вернуть номинал в дату погашения по условиям выпуска.',
+      'Главная ошибка новичка — смотреть только на купон. Итоговый результат зависит от цены покупки, срока до погашения, купона, налогов, ликвидности и надежности эмитента. Поэтому в карточке облигации важно сравнивать несколько параметров сразу.',
       'Облигации бывают государственными, субфедеральными и корпоративными. Чем выше риск эмитента, тем выше может быть доходность, но вместе с ней растет и вероятность неблагоприятного сценария.'
     ],
     tipTitle: 'Основные параметры облигаций',
@@ -62,8 +62,8 @@ const LESSONS = [
     goal: 'После урока вы поймете, как один пай фонда может заменить набор из десятков отдельных бумаг.',
     concepts: ['ПИФ', 'БПИФ', 'ETF', 'пай', 'диверсификация', 'комиссия фонда'],
     sections: [
-      'ПИФы, БПИФы и ETF — это формы коллективных инвестиций. Деньги многих инвесторов объединяются в общий портфель, которым управляют по заранее описанной стратегии.',
-      'Вместо самостоятельного выбора десятков бумаг вы покупаете пай фонда и получаете долю в готовом наборе активов. Это помогает быстрее собрать диверсификацию и сэкономить время на анализе.',
+      'Фонды помогают купить не одну бумагу, а готовую корзину активов. Внутри могут быть акции, облигации, инструменты денежного рынка или смешанный набор — в зависимости от стратегии фонда.',
+      'Это удобно для старта: вместо самостоятельного выбора десятков эмитентов вы покупаете один пай и получаете долю в готовом портфеле. Но фонд тоже нужно выбирать осознанно: смотреть состав, комиссию, ликвидность и риск стратегии.',
       'У фондов есть комиссия за управление, которая уже учитывается в стоимости пая. Перед покупкой полезно посмотреть состав фонда, стратегию, ликвидность, размер комиссии и историю стоимости пая.'
     ],
     tipTitle: 'Удобство готовых решений',
@@ -81,8 +81,8 @@ const LESSONS = [
     goal: 'После урока вы поймете, какой уровень риска вам ближе и почему портфель лучше собирать из разных активов.',
     concepts: ['риск-профиль', 'диверсификация', 'распределение активов', 'портфель 60/40'],
     sections: [
-      'Базовое правило инвестиций: потенциальная доходность связана с риском. Чем выше возможность заработать больше рынка, тем выше вероятность просадки или потери части капитала.',
-      'Диверсификация — защита от одной ошибки. Распределяйте капитал между разными классами активов, отраслями и эмитентами. Если одна идея окажется неудачной, остальные части портфеля могут снизить общий ущерб.',
+      'Риск — это не только возможность потерять деньги. Это еще и вероятность, что результат будет отличаться от ожиданий: цена временно снизится, доходность окажется ниже плана или деньги понадобятся раньше срока.',
+      'Диверсификация защищает от зависимости от одной идеи. Когда в портфеле есть разные классы активов, отрасли и эмитенты, ошибка в одной бумаге не определяет судьбу всего капитала.',
       'Классический умеренный подход часто описывают как сочетание 60% акций и 40% облигаций. Это не универсальный рецепт, а учебный ориентир: доли зависят от целей, срока, возраста, дохода и готовности к просадкам.'
     ],
     tipTitle: 'Учебный ориентир',
@@ -100,8 +100,8 @@ const LESSONS = [
     goal: 'После урока вы поймете, как работает ИИС-3, почему вычет зависит от ставки НДФЛ и когда льготы можно потерять.',
     concepts: ['ИИС-3', 'НДФЛ', 'вычет на взнос', 'льгота на доход', 'минимальный срок владения'],
     sections: [
-      'Прибыль от инвестиций облагается НДФЛ. В России действует прогрессивная шкала: ставка зависит от размера совокупного дохода. Налог может возникать при продаже активов с прибылью и при получении отдельных видов дохода.',
-      'ИИС-3 — индивидуальный инвестиционный счет третьего типа. Он совмещает две льготы: вычет на взносы и освобождение инвестиционного дохода при соблюдении минимального срока владения счетом.',
+      'Налоги — важная часть инвестиционного результата. Итоговая доходность зависит не только от цены покупки и продажи, но и от того, какой налог возникнет, можно ли применить льготу и выполняются ли условия счета.',
+      'ИИС-3 помогает инвестировать с налоговыми преимуществами: можно получить вычет на взносы и льготу на инвестиционный доход при соблюдении условий. Но это инструмент для среднесрочной и долгосрочной цели, а не счет для денег, которые могут срочно понадобиться.',
       'Если закрыть ИИС-3 раньше минимального срока, право на льготы утрачивается: ранее полученные вычеты нужно вернуть, а доход может быть обложен налогом.'
     ],
     tipTitle: 'Ключевые условия ИИС-3',
@@ -153,7 +153,7 @@ const PRACTICES = {
   }
 };
 
-const STORAGE_KEY = 'akbf-academy-pwa-final-1';
+const STORAGE_KEY = 'akbf-academy-pwa-final-2';
 const appState = {
   activeLesson: 0,
   theme: 'light',
@@ -181,7 +181,8 @@ const els = {
   resetBtn: document.getElementById('resetProgress'),
   installBtn: document.getElementById('installApp'),
   embedCode: document.getElementById('embedCode'),
-  offlineBadge: document.getElementById('offlineBadge')
+  offlineBadge: document.getElementById('offlineBadge'),
+  completionHint: document.getElementById('completionHint')
 };
 
 let deferredPrompt = null;
@@ -235,6 +236,16 @@ function updateProgress() {
   els.progressPercent.textContent = `${percent}%`;
 }
 
+function isCourseComplete() {
+  return appState.progress.tests.filter(Boolean).length === LESSONS.length;
+}
+
+function setActiveLesson(index, shouldScroll = true) {
+  appState.activeLesson = Math.max(0, Math.min(LESSONS.length - 1, index));
+  renderLesson();
+  if (shouldScroll) requestAnimationFrame(() => scrollMainToTop());
+}
+
 function renderLesson() {
   const lesson = LESSONS[appState.activeLesson];
   appState.progress.lessons[appState.activeLesson] = true;
@@ -253,6 +264,7 @@ function renderLesson() {
   bindPracticeBlock(lesson);
   renderWidget(lesson.widget);
   renderTest(lesson.tests);
+  renderLessonNavigation();
   updateProgress();
   safeSave();
 }
@@ -303,9 +315,10 @@ function bindPracticeBlock(lesson) {
 function scrollMainToTop() {
   const content = document.querySelector('.content');
   const main = document.getElementById('main');
-  if (content) content.scrollTo({ top: 0, behavior: 'smooth' });
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  if (main) main.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const behavior = window.innerWidth <= 920 ? 'auto' : 'smooth';
+  if (content) content.scrollTo({ top: 0, left: 0, behavior });
+  if (document.scrollingElement) document.scrollingElement.scrollTo({ top: 0, left: 0, behavior });
+  if (main) main.scrollIntoView({ behavior, block: 'start' });
 }
 
 function renderWidget(type) {
@@ -459,8 +472,42 @@ function renderTest(tests){
       appState.progress.scores[appState.activeLesson] = score;
       document.getElementById('testScore').textContent = `Правильных ответов: ${score} из ${tests.length}`;
       if (answersCount === tests.length) appState.progress.tests[appState.activeLesson] = true;
-      updateProgress(); safeSave();
+      updateProgress(); safeSave(); renderLessonNavigation();
     });
+  });
+}
+
+
+function renderLessonNavigation() {
+  els.testPanel.querySelector('.lesson-actions')?.remove();
+  const current = appState.activeLesson;
+  const isFirst = current === 0;
+  const isLast = current === LESSONS.length - 1;
+  const complete = isCourseComplete();
+
+  const nav = document.createElement('div');
+  nav.className = 'lesson-actions';
+  nav.innerHTML = `
+    <button class="btn btn-secondary" data-prev-lesson ${isFirst ? 'disabled' : ''}>← Предыдущий урок</button>
+    <button class="btn btn-primary" data-next-lesson>${isLast ? (complete ? 'Перейти к итогу курса' : 'Вернуться к первому уроку') : 'Следующий урок →'}</button>
+  `;
+  els.testPanel.appendChild(nav);
+
+  nav.querySelector('[data-prev-lesson]')?.addEventListener('click', () => {
+    if (!isFirst) setActiveLesson(current - 1, true);
+  });
+
+  nav.querySelector('[data-next-lesson]')?.addEventListener('click', () => {
+    if (!isLast) {
+      setActiveLesson(current + 1, true);
+      return;
+    }
+    if (complete) {
+      updateCompletionPanel(true);
+      completionPanel?.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      setActiveLesson(0, true);
+    }
   });
 }
 
@@ -505,10 +552,8 @@ function initEvents() {
   els.nav.addEventListener('click', (e)=>{
     const btn = e.target.closest('[data-lesson]');
     if(!btn) return;
-    appState.activeLesson = +btn.dataset.lesson;
-    renderLesson();
+    setActiveLesson(+btn.dataset.lesson, true);
     els.sidebar.classList.remove('open');
-    setTimeout(scrollMainToTop, 0);
   });
   els.themeToggle.addEventListener('click', ()=>{
     appState.theme = appState.theme === 'dark' ? 'light' : 'dark';
@@ -564,15 +609,28 @@ const scrollToLessonsBtn = document.getElementById('scrollToLessons');
 function hideSplash(){ setTimeout(()=> splash && splash.classList.add('hidden'), 900); }
 function showOnboarding(){ onboardingBackdrop.classList.remove('hidden'); onboardingModal.classList.remove('hidden'); }
 function hideOnboarding(){ onboardingBackdrop.classList.add('hidden'); onboardingModal.classList.add('hidden'); }
-function updateCompletionPanel(){
+function updateCompletionPanel(show = false){
   const lessonsDone = appState.progress.lessons.filter(Boolean).length;
   const testsDone = appState.progress.tests.filter(Boolean).length;
   const totalScore = appState.progress.scores.reduce((a,b)=>a+b,0);
+  const complete = testsDone === LESSONS.length;
+
   finalLessons.textContent = `${lessonsDone}/6`;
   finalTests.textContent = `${testsDone}/6`;
   finalScore.textContent = `${totalScore} из 18`;
-  certificateStatus.textContent = testsDone === 6 ? 'Курс завершен' : 'В процессе';
-  completionPanel.classList.toggle('hidden', false);
+  certificateStatus.textContent = complete ? 'Курс завершен' : 'В процессе';
+
+  if (els.completionHint) {
+    els.completionHint.textContent = complete
+      ? 'Все тесты пройдены. Можно открыть итоговый экран и скачать сертификат.'
+      : `Финальный экран откроется после прохождения всех 6 тестов. Сейчас завершено: ${testsDone}/6.`;
+  }
+  if (openCompletionBtn) {
+    openCompletionBtn.disabled = !complete;
+    openCompletionBtn.textContent = complete ? 'Открыть итог курса' : `Доступно после ${LESSONS.length} тестов`;
+  }
+
+  completionPanel.classList.toggle('hidden', !(show && complete));
 }
 function exportCertificate(){
   const card = document.getElementById('certificateCard');
@@ -618,7 +676,7 @@ function exportCertificate(){
 const originalUpdateProgress = updateProgress;
 updateProgress = function(){
   originalUpdateProgress();
-  if (typeof updateCompletionPanel === 'function') updateCompletionPanel();
+  if (typeof updateCompletionPanel === 'function') updateCompletionPanel(false);
 };
 
 // Финальная инициализация клиентской версии.
@@ -628,7 +686,7 @@ closeOnboardingBtn?.addEventListener('click', ()=>{ hideOnboarding(); localStora
 startLearningBtn?.addEventListener('click', ()=>{ hideOnboarding(); localStorage.setItem('akbf-academy-onboarding-seen','1'); });
 onboardingBackdrop?.addEventListener('click', ()=>{ hideOnboarding(); localStorage.setItem('akbf-academy-onboarding-seen','1'); });
 showOnboardingBtn?.addEventListener('click', showOnboarding);
-openCompletionBtn?.addEventListener('click', ()=>{ updateCompletionPanel(); completionPanel.scrollIntoView({behavior:'smooth', block:'start'}); });
+openCompletionBtn?.addEventListener('click', ()=>{ if(!isCourseComplete()) return; updateCompletionPanel(true); completionPanel.scrollIntoView({behavior:'smooth', block:'start'}); });
 downloadCertificateBtn?.addEventListener('click', exportCertificate);
 scrollToLessonsBtn?.addEventListener('click', ()=> document.getElementById('lessonPanel')?.scrollIntoView({behavior:'smooth', block:'start'}));
-updateCompletionPanel();
+updateCompletionPanel(false);

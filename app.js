@@ -525,16 +525,16 @@ updateProgress = function(){
   if (typeof updateCompletionPanel === 'function') updateCompletionPanel();
 };
 
-const originalInit = initEvents;
-initEvents = function(){
-  originalInit();
-  hideSplash();
-  if (!localStorage.getItem('akbf-academy-onboarding-seen')) showOnboarding();
-  closeOnboardingBtn?.addEventListener('click', ()=>{ hideOnboarding(); localStorage.setItem('akbf-academy-onboarding-seen','1'); });
-  startLearningBtn?.addEventListener('click', ()=>{ hideOnboarding(); localStorage.setItem('akbf-academy-onboarding-seen','1'); });
-  onboardingBackdrop?.addEventListener('click', ()=>{ hideOnboarding(); localStorage.setItem('akbf-academy-onboarding-seen','1'); });
-  showOnboardingBtn?.addEventListener('click', showOnboarding);
-  openCompletionBtn?.addEventListener('click', ()=>{ updateCompletionPanel(); completionPanel.scrollIntoView({behavior:'smooth', block:'start'}); });
-  downloadCertificateBtn?.addEventListener('click', exportCertificate);
-  scrollToLessonsBtn?.addEventListener('click', ()=> document.getElementById('lessonPanel')?.scrollIntoView({behavior:'smooth', block:'start'}));
-};
+// Дополнительная инициализация v3 должна выполняться после объявления элементов.
+// В исходной сборке этот код только переопределял initEvents уже ПОСЛЕ запуска init(),
+// поэтому splash screen не скрывался и приложение выглядело как «не открывается».
+hideSplash();
+if (!localStorage.getItem('akbf-academy-onboarding-seen')) showOnboarding();
+closeOnboardingBtn?.addEventListener('click', ()=>{ hideOnboarding(); localStorage.setItem('akbf-academy-onboarding-seen','1'); });
+startLearningBtn?.addEventListener('click', ()=>{ hideOnboarding(); localStorage.setItem('akbf-academy-onboarding-seen','1'); });
+onboardingBackdrop?.addEventListener('click', ()=>{ hideOnboarding(); localStorage.setItem('akbf-academy-onboarding-seen','1'); });
+showOnboardingBtn?.addEventListener('click', showOnboarding);
+openCompletionBtn?.addEventListener('click', ()=>{ updateCompletionPanel(); completionPanel.scrollIntoView({behavior:'smooth', block:'start'}); });
+downloadCertificateBtn?.addEventListener('click', exportCertificate);
+scrollToLessonsBtn?.addEventListener('click', ()=> document.getElementById('lessonPanel')?.scrollIntoView({behavior:'smooth', block:'start'}));
+updateCompletionPanel();

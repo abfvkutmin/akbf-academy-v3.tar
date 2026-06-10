@@ -1,4 +1,4 @@
-const CACHE_NAME = 'akbf-academy-polished-v1';
+const CACHE_NAME = 'akbf-academy-cache-v3-ideal-v2';
 const OFFLINE_ASSETS = [
   './',
   './index.html',

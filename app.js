@@ -16,9 +16,9 @@ const LESSONS = [
     tipText: 'Сформируйте резерв на 3–6 месяцев обязательных расходов. Эти деньги лучше хранить в ликвидных инструментах, чтобы быстро воспользоваться ими при необходимости.',
     widget: 'capital-calc',
     tests: [
-      {q:'Что такое финансовая подушка безопасности?', answers:['Резерв на 3–6 месяцев расходов в надежном и ликвидном инструменте','Деньги для покупки самых доходных акций','Кредитный лимит на карте'], correct:0, expl:'Подушка нужна для непредвиденных ситуаций. Ее не стоит подвергать рыночному риску.'},
-      {q:'Что лучше сделать перед первой инвестицией?', answers:['Определить цель, срок, взнос и допустимый риск','Купить одну популярную акцию на всю сумму','Открыть счет и сразу торговать каждый день'], correct:0, expl:'План снижает риск эмоциональных решений и помогает выбирать инструменты осознанно.'},
-      {q:'Когда работает сложный процент?', answers:['Когда доход остается внутри капитала и начинает приносить новый доход','Когда деньги каждый месяц снимаются со счета','Когда ставка фиксирована навсегда'], correct:0, expl:'Сложный процент усиливается при реинвестировании дохода и регулярных пополнениях.'}
+      {q:'Что такое финансовая подушка безопасности?', answers:['Деньги для покупки самых доходных акций','Резерв на 3–6 месяцев расходов в надежном и ликвидном инструменте','Кредитный лимит на карте'], correct:1, expl:'Подушка нужна для непредвиденных ситуаций. Ее не стоит подвергать рыночному риску.'},
+      {q:'Что лучше сделать перед первой инвестицией?', answers:['Купить одну популярную акцию на всю сумму','Открыть счет и сразу торговать каждый день','Определить цель, срок, взнос и допустимый риск'], correct:2, expl:'План снижает риск эмоциональных решений и помогает выбирать инструменты осознанно.'},
+      {q:'Когда работает сложный процент?', answers:['Когда доход остается внутри капитала и начинает приносить новый доход','Когда ставка фиксирована навсегда','Когда деньги каждый месяц снимаются со счета'], correct:0, expl:'Сложный процент усиливается при реинвестировании дохода и регулярных пополнениях.'}
     ]
   },
   {
@@ -38,9 +38,9 @@ const LESSONS = [
     tipText: 'Спросите себя: почему этот бизнес может стоить дороже через несколько лет и что может помешать этому сценарию?',
     widget: 'stock-simulator',
     tests: [
-      {q:'Что получает инвестор при покупке акции?', answers:['Долю в бизнесе компании','Обязательство вернуть номинал','Гарантированный купон'], correct:0, expl:'Акция — долевой инструмент. Она дает участие в бизнесе, но не гарантирует доход.'},
-      {q:'Из чего может складываться доход по акциям?', answers:['Из роста цены и дивидендов','Только из купонов','Только из налогового вычета'], correct:0, expl:'Инвестор может заработать на росте рыночной цены и дивидендах, если компания их выплачивает.'},
-      {q:'Почему акции рискованнее облигаций?', answers:['Цена сильнее меняется, а выплаты не гарантированы','Акции нельзя продать','Акции доступны только квалифицированным инвесторам'], correct:0, expl:'У акций нет обязательства вернуть вложенные деньги или регулярно платить доход.'}
+      {q:'Что получает инвестор при покупке акции?', answers:['Обязательство вернуть номинал','Долю в бизнесе компании','Гарантированный купон'], correct:1, expl:'Акция — долевой инструмент. Она дает участие в бизнесе, но не гарантирует доход.'},
+      {q:'Из чего может складываться доход по акциям?', answers:['Только из купонов','Только из налогового вычета','Из роста цены и дивидендов'], correct:2, expl:'Инвестор может заработать на росте рыночной цены и дивидендах, если компания их выплачивает.'},
+      {q:'Почему акции рискованнее облигаций?', answers:['Цена сильнее меняется, а выплаты не гарантированы','Акции доступны только квалифицированным инвесторам','Акции нельзя продать'], correct:0, expl:'У акций нет обязательства вернуть вложенные деньги или регулярно платить доход.'}
     ]
   },
   {
@@ -60,9 +60,9 @@ const LESSONS = [
     tipText: 'Если облигация куплена ниже или выше номинала, доходность к погашению может заметно отличаться от купонной ставки.',
     widget: 'bond-calculator',
     tests: [
-      {q:'Что происходит при покупке облигации?', answers:['Инвестор дает деньги эмитенту в долг','Инвестор покупает долю бизнеса','Инвестор получает дивиденды'], correct:0, expl:'Облигация — долговой инструмент с условиями купонов и погашения.'},
-      {q:'Почему купон не равен полной доходности?', answers:['Важны цена покупки и срок до погашения','Потому что купон не выплачивается','Потому что доходность всегда равна ключевой ставке'], correct:0, expl:'Цена, срок, купон и погашение вместе формируют доходность к погашению.'},
-      {q:'Что такое ОФЗ?', answers:['Облигации федерального займа','Фонд на акции','Опцион с фиксированной защитой'], correct:0, expl:'ОФЗ выпускаются государством и считаются одним из наиболее надежных долговых инструментов в России.'}
+      {q:'Что происходит при покупке облигации?', answers:['Инвестор покупает долю бизнеса','Инвестор дает деньги эмитенту в долг','Инвестор получает дивиденды'], correct:1, expl:'Облигация — долговой инструмент с условиями купонов и погашения.'},
+      {q:'Почему купон не равен полной доходности?', answers:['Потому что купон не выплачивается','Потому что доходность всегда равна ключевой ставке','Важны цена покупки и срок до погашения'], correct:2, expl:'Цена, срок, купон и погашение вместе формируют доходность к погашению.'},
+      {q:'Что такое ОФЗ?', answers:['Облигации федерального займа','Опцион с фиксированной защитой','Фонд на акции'], correct:0, expl:'ОФЗ выпускаются государством и считаются одним из наиболее надежных долговых инструментов в России.'}
     ]
   },
   {
@@ -82,9 +82,9 @@ const LESSONS = [
     tipText: 'Фонд помогает диверсифицировать портфель, но его стоимость тоже может снижаться в зависимости от активов внутри.',
     widget: 'etf-pie',
     tests: [
-      {q:'Что такое фонд в инвестициях?', answers:['Готовый набор активов, разделенный на паи','Кредитный договор','Гарантированный вклад'], correct:0, expl:'Фонд объединяет средства инвесторов и покупает активы по выбранной стратегии.'},
-      {q:'В чем преимущество фондов?', answers:['Диверсификация одной покупкой','Полное отсутствие риска','Обязательная доходность выше рынка'], correct:0, expl:'Фонд позволяет купить набор активов, но не гарантирует доходность.'},
-      {q:'Где обычно учитывается комиссия фонда?', answers:['В стоимости чистых активов фонда','Отдельным счетом каждый день','Только при закрытии ИИС'], correct:0, expl:'Комиссия управляющей компании влияет на стоимость пая и обычно уже учтена внутри фонда.'}
+      {q:'Что такое фонд в инвестициях?', answers:['Кредитный договор','Готовый набор активов, разделенный на паи','Гарантированный вклад'], correct:1, expl:'Фонд объединяет средства инвесторов и покупает активы по выбранной стратегии.'},
+      {q:'В чем преимущество фондов?', answers:['Полное отсутствие риска','Обязательная доходность выше рынка','Диверсификация одной покупкой'], correct:2, expl:'Фонд позволяет купить набор активов, но не гарантирует доходность.'},
+      {q:'Где обычно учитывается комиссия фонда?', answers:['В стоимости чистых активов фонда','Только при закрытии ИИС','Отдельным счетом каждый день'], correct:0, expl:'Комиссия управляющей компании влияет на стоимость пая и обычно уже учтена внутри фонда.'}
     ]
   },
   {
@@ -104,9 +104,9 @@ const LESSONS = [
     tipText: 'Даже доходная стратегия не подходит, если вы продаете активы в первую же просадку. Комфортный риск помогает сохранять дисциплину.',
     widget: 'risk-profiler',
     tests: [
-      {q:'Что обычно связано с повышенной потенциальной доходностью?', answers:['Повышенный риск и возможные просадки','Гарантия сохранности капитала','Отсутствие налогов'], correct:0, expl:'Рынок обычно платит за риск, но результат не гарантирован.'},
-      {q:'Что такое диверсификация?', answers:['Распределение капитала между разными активами','Покупка одной акции на всю сумму','Полный отказ от облигаций'], correct:0, expl:'Диверсификация снижает зависимость портфеля от одного инструмента или эмитента.'},
-      {q:'Зачем нужен риск-профиль?', answers:['Чтобы подобрать портфель под цель, срок и готовность к просадкам','Чтобы получить гарантированный доход','Чтобы не платить комиссии'], correct:0, expl:'Риск-профиль помогает выбрать более подходящее соотношение активов.'}
+      {q:'Что обычно связано с повышенной потенциальной доходностью?', answers:['Гарантия сохранности капитала','Повышенный риск и возможные просадки','Отсутствие налогов'], correct:1, expl:'Рынок обычно платит за риск, но результат не гарантирован.'},
+      {q:'Что такое диверсификация?', answers:['Покупка одной акции на всю сумму','Полный отказ от облигаций','Распределение капитала между разными активами'], correct:2, expl:'Диверсификация снижает зависимость портфеля от одного инструмента или эмитента.'},
+      {q:'Зачем нужен риск-профиль?', answers:['Чтобы подобрать портфель под цель, срок и готовность к просадкам','Чтобы не платить комиссии','Чтобы получить гарантированный доход'], correct:0, expl:'Риск-профиль помогает выбрать более подходящее соотношение активов.'}
     ]
   },
   {
@@ -126,9 +126,9 @@ const LESSONS = [
     tipText: 'Если деньги могут понадобиться раньше минимального срока, обычный брокерский счет или более ликвидные инструменты могут быть удобнее.',
     widget: 'iis-calculator',
     tests: [
-      {q:'Что такое ИИС-3?', answers:['Инвестиционный счет с налоговыми льготами при соблюдении условий','Обычный банковский вклад','Страховой полис'], correct:0, expl:'ИИС-3 дает налоговые преимущества, но требует соблюдения условий и срока владения.'},
-      {q:'С какой базы рассчитывается ежегодный вычет на взнос?', answers:['До 400 000 ₽ в год','С любой суммы без ограничений','Только с 1 млн ₽'], correct:0, expl:'Пополнения могут быть больше, но база для вычета ограничена 400 000 ₽ в год.'},
-      {q:'Какой максимальный возврат возможен при ставке НДФЛ 22%?', answers:['88 000 ₽','52 000 ₽','400 000 ₽'], correct:0, expl:'22% от 400 000 ₽ = 88 000 ₽ при наличии достаточного уплаченного НДФЛ.'}
+      {q:'Что такое ИИС-3?', answers:['Обычный банковский вклад','Инвестиционный счет с налоговыми льготами при соблюдении условий','Страховой полис'], correct:1, expl:'ИИС-3 дает налоговые преимущества, но требует соблюдения условий и срока владения.'},
+      {q:'С какой базы рассчитывается ежегодный вычет на взнос?', answers:['С любой суммы без ограничений','Только с 1 млн ₽','До 400 000 ₽ в год'], correct:2, expl:'Пополнения могут быть больше, но база для вычета ограничена 400 000 ₽ в год.'},
+      {q:'Какой максимальный возврат возможен при ставке НДФЛ 22%?', answers:['88 000 ₽','400 000 ₽','52 000 ₽'], correct:0, expl:'22% от 400 000 ₽ = 88 000 ₽ при наличии достаточного уплаченного НДФЛ.'}
     ]
   }
 ];
@@ -286,39 +286,89 @@ function widgetShell(title, html){
   wrap.innerHTML = `<div class="widget-title"><span>Интерактивный блок</span><h4>${title}</h4></div>${html}`;
   return wrap;
 }
+function rangeField(id, label, min, max, step, value, suffix=''){
+  return `<label class="field range-field"><span>${label}: <b id="${id}-label"></b></span><input id="${id}" type="range" min="${min}" max="${max}" step="${step}" value="${value}" data-suffix="${suffix}"></label>`;
+}
+function setRangeLabel(root, id, formatter){
+  const input = root.querySelector('#'+id);
+  const label = root.querySelector('#'+id+'-label');
+  if(!input || !label) return 0;
+  const value = +input.value;
+  label.textContent = formatter ? formatter(value) : value + (input.dataset.suffix || '');
+  return value;
+}
 function capitalWidget(){
-  const el = widgetShell('Калькулятор сложного процента', `<div class="widget-grid"><label class="field"><span>Стартовая сумма</span><input id="cc-start" type="number" value="30000"></label><label class="field"><span>Ежемесячно</span><input id="cc-month" type="number" value="5000"></label><label class="field"><span>Доходность, % годовых</span><input id="cc-rate" type="number" value="15"></label><label class="field"><span>Срок, лет</span><input id="cc-years" type="number" value="5"></label></div><div class="result-box" id="capitalResult"></div>`);
-  const calc=()=>{ const start=+el.querySelector('#cc-start').value||0, month=+el.querySelector('#cc-month').value||0, rate=(+el.querySelector('#cc-rate').value||0)/100/12, years=+el.querySelector('#cc-years').value||0; let total=start; for(let i=0;i<years*12;i++) total=(total+month)*(1+rate); const invested=start+month*years*12; el.querySelector('#capitalResult').innerHTML=`<strong>${formatMoney(total)}</strong><span>Вложено: ${formatMoney(invested)} · результат: ${formatMoney(total-invested)}</span>`; };
-  el.querySelectorAll('input').forEach(i=>i.addEventListener('input',calc)); calc(); return el;
+  const el = widgetShell('Калькулятор сложного процента', `<div class="widget-grid">
+    ${rangeField('cc-start','Стартовая сумма',10000,1000000,10000,30000,' ₽')}
+    ${rangeField('cc-month','Ежемесячное пополнение',0,100000,1000,5000,' ₽')}
+    ${rangeField('cc-rate','Доходность годовых',1,30,1,15,'%')}
+    ${rangeField('cc-years','Срок инвестирования',1,25,1,5,' лет')}
+  </div><div class="result-box" id="capitalResult"></div>`);
+  const calc=()=>{
+    const start=setRangeLabel(el,'cc-start',formatMoney), month=setRangeLabel(el,'cc-month',formatMoney), rate=setRangeLabel(el,'cc-rate',v=>v+'%')/100/12, years=setRangeLabel(el,'cc-years',v=>v+' лет');
+    let total=start; for(let i=0;i<years*12;i++) total=(total+month)*(1+rate);
+    const invested=start+month*years*12;
+    el.querySelector('#capitalResult').innerHTML=`<strong>${formatMoney(total)}</strong><span>Вложено: ${formatMoney(invested)} · потенциальный результат: ${formatMoney(total-invested)}</span>`;
+  };
+  el.querySelectorAll('input[type="range"]').forEach(i=>i.addEventListener('input',calc)); calc(); return el;
 }
 function stockWidget(){
-  const el = widgetShell('Тренажер покупки акций', `<div class="simulator-top"><div><span class="muted">Учебная цена акции</span><div class="price" id="stockPrice"></div></div><span id="stockChange" class="price-change up">0%</span></div><div class="chart" id="stockChart"></div><div class="sim-balance"><div class="sim-kpi"><span>Деньги</span><b id="cashValue"></b></div><div class="sim-kpi"><span>Акции</span><b id="sharesValue"></b></div><div class="sim-kpi"><span>Портфель</span><b id="portfolioValue"></b></div></div><div class="btn-row"><button class="btn btn-primary" id="buyBtn">Купить 10</button><button class="btn btn-secondary" id="sellBtn">Продать 10</button><button class="btn btn-ghost" id="tickBtn">Следующий день</button></div>`);
+  const el = widgetShell('Тренажер покупки акций', `<div class="simulator-top"><div><span class="muted">Учебная цена акции</span><div class="price" id="stockPrice"></div></div><span id="stockChange" class="price-change up">0%</span></div><div class="chart" id="stockChart"></div><div class="sim-balance"><div class="sim-kpi"><span>Деньги</span><b id="cashValue"></b></div><div class="sim-kpi"><span>Акции</span><b id="sharesValue"></b></div><div class="sim-kpi"><span>Портфель</span><b id="portfolioValue"></b></div></div><div class="widget-grid compact-widget-grid">${rangeField('trade-qty','Количество акций в сделке',1,50,1,10,' шт.')}</div><div class="btn-row"><button class="btn btn-primary" id="buyBtn">Купить</button><button class="btn btn-secondary" id="sellBtn">Продать</button><button class="btn btn-ghost" id="tickBtn">Следующий день</button></div>`);
+  const tradeQty=()=>setRangeLabel(el,'trade-qty',v=>v+' шт.');
   const renderChart=()=>{ const data=appState.sim.history, min=Math.min(...data), max=Math.max(...data), range=max-min||1; const pts=data.map((v,i)=>`${(i/(data.length-1))*100},${100-((v-min)/range)*80-10}`).join(' '); el.querySelector('#stockChart').innerHTML=`<svg viewBox="0 0 100 100" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`; };
-  const upd=()=>{ const s=appState.sim; el.querySelector('#stockPrice').textContent=s.price.toFixed(1)+' ₽'; el.querySelector('#cashValue').textContent=formatMoney(s.cash); el.querySelector('#sharesValue').textContent=s.shares+' шт.'; el.querySelector('#portfolioValue').textContent=formatMoney(s.cash+s.shares*s.price); renderChart(); };
+  const upd=()=>{ const s=appState.sim; el.querySelector('#stockPrice').textContent=s.price.toFixed(1)+' ₽'; el.querySelector('#cashValue').textContent=formatMoney(s.cash); el.querySelector('#sharesValue').textContent=s.shares+' шт.'; el.querySelector('#portfolioValue').textContent=formatMoney(s.cash+s.shares*s.price); tradeQty(); renderChart(); };
   el.querySelector('#tickBtn').onclick=()=>{ const old=appState.sim.price; appState.sim.price=Math.max(60, +(old+(Math.random()*8-3.5)).toFixed(1)); appState.sim.history.push(appState.sim.price); if(appState.sim.history.length>18) appState.sim.history.shift(); const pct=(appState.sim.price-old)/old*100; const change=el.querySelector('#stockChange'); change.textContent=(pct>=0?'+':'')+pct.toFixed(1)+'%'; change.className='price-change '+(pct>=0?'up':'down'); upd(); safeSave(); };
-  el.querySelector('#buyBtn').onclick=()=>{ const cost=10*appState.sim.price; if(appState.sim.cash>=cost){ appState.sim.cash-=cost; appState.sim.shares+=10; } upd(); safeSave(); };
-  el.querySelector('#sellBtn').onclick=()=>{ const qty=Math.min(10,appState.sim.shares); appState.sim.shares-=qty; appState.sim.cash+=qty*appState.sim.price; upd(); safeSave(); };
-  upd(); return el;
+  el.querySelector('#buyBtn').onclick=()=>{ const qty=tradeQty(), cost=qty*appState.sim.price; if(appState.sim.cash>=cost){ appState.sim.cash-=cost; appState.sim.shares+=qty; } upd(); safeSave(); };
+  el.querySelector('#sellBtn').onclick=()=>{ const qty=Math.min(tradeQty(),appState.sim.shares); appState.sim.shares-=qty; appState.sim.cash+=qty*appState.sim.price; upd(); safeSave(); };
+  el.querySelector('#trade-qty').addEventListener('input', upd); upd(); return el;
 }
 function bondWidget(){
-  const el=widgetShell('Калькулятор доходности облигации', `<div class="widget-grid"><label class="field"><span>Цена, % от номинала</span><input id="bond-price" type="number" value="96"></label><label class="field"><span>Купон, % годовых</span><input id="bond-coupon" type="number" value="13"></label><label class="field"><span>Срок, лет</span><input id="bond-years" type="number" value="3"></label><label class="field"><span>Номинал, ₽</span><input id="bond-face" type="number" value="1000"></label></div><div class="result-box" id="bondResult"></div>`);
-  const calc=()=>{ const pricePct=+el.querySelector('#bond-price').value||0, couponPct=+el.querySelector('#bond-coupon').value||0, years=+el.querySelector('#bond-years').value||1, face=+el.querySelector('#bond-face').value||1000; const price=face*pricePct/100, coupon=face*couponPct/100; const ytm=((coupon+(face-price)/years)/((face+price)/2))*100; el.querySelector('#bondResult').innerHTML=`<strong>${formatPct(ytm)}</strong><span>Ориентир доходности к погашению. Купон: ${formatMoney(coupon)}, цена: ${formatMoney(price)}.</span>`; };
-  el.querySelectorAll('input').forEach(i=>i.addEventListener('input',calc)); calc(); return el;
+  const el=widgetShell('Калькулятор доходности облигации', `<div class="widget-grid">
+    ${rangeField('bond-price','Цена от номинала',80,120,1,96,'%')}
+    ${rangeField('bond-coupon','Купон годовых',5,25,0.5,13,'%')}
+    ${rangeField('bond-years','Срок до погашения',1,10,1,3,' лет')}
+    ${rangeField('bond-face','Номинал',1000,10000,1000,1000,' ₽')}
+  </div><div class="result-box" id="bondResult"></div>`);
+  const calc=()=>{
+    const pricePct=setRangeLabel(el,'bond-price',v=>v+'%'), couponPct=setRangeLabel(el,'bond-coupon',v=>v+'%'), years=setRangeLabel(el,'bond-years',v=>v+' лет'), face=setRangeLabel(el,'bond-face',formatMoney);
+    const price=face*pricePct/100, coupon=face*couponPct/100;
+    const ytm=((coupon+(face-price)/years)/((face+price)/2))*100;
+    el.querySelector('#bondResult').innerHTML=`<strong>${formatPct(ytm)}</strong><span>Ориентир доходности к погашению. Купон: ${formatMoney(coupon)}, цена покупки: ${formatMoney(price)}.</span>`;
+  };
+  el.querySelectorAll('input[type="range"]').forEach(i=>i.addEventListener('input',calc)); calc(); return el;
 }
 function etfWidget(){
-  const el=widgetShell('Конструктор портфеля из фондов', `<div class="widget-grid"><label class="field"><span>Акции, %</span><input id="etf-stock" type="range" min="0" max="100" value="50"></label><label class="field"><span>Облигации, %</span><input id="etf-bond" type="range" min="0" max="100" value="35"></label><label class="field"><span>Денежный рынок, %</span><input id="etf-cash" type="range" min="0" max="100" value="15"></label></div><div class="allocation" id="allocation"></div><div class="result-box" id="etfResult"></div>`);
-  const sync=()=>{ const vals=['stock','bond','cash'].map(x=>+el.querySelector('#etf-'+x).value); const total=vals.reduce((a,b)=>a+b,0); el.querySelector('#allocation').innerHTML=vals.map((v,i)=>`<span style="width:${total?v/total*100:0}%"></span>`).join(''); el.querySelector('#etfResult').innerHTML=`<strong>${total===100?'Портфель собран корректно':'Проверьте сумму долей'}</strong><span>Сумма долей: ${total}%. Ориентир: привести сумму к 100%.</span>`; };
-  el.querySelectorAll('input').forEach(i=>i.addEventListener('input',sync)); sync(); return el;
+  const el=widgetShell('Конструктор портфеля из фондов', `<div class="widget-grid">
+    ${rangeField('etf-stock','Акции',0,100,5,50,'%')}
+    ${rangeField('etf-bond','Облигации',0,100,5,35,'%')}
+    ${rangeField('etf-cash','Денежный рынок',0,100,5,15,'%')}
+  </div><div class="allocation" id="allocation"></div><div class="result-box" id="etfResult"></div>`);
+  const sync=()=>{ const vals=['stock','bond','cash'].map(x=>setRangeLabel(el,'etf-'+x,v=>v+'%')); const total=vals.reduce((a,b)=>a+b,0); el.querySelector('#allocation').innerHTML=vals.map((v,i)=>`<span style="width:${total?v/total*100:0}%"></span>`).join(''); el.querySelector('#etfResult').innerHTML=`<strong>${total===100?'Портфель собран корректно':'Проверьте сумму долей'}</strong><span>Сумма долей: ${total}%. Ориентир: привести сумму к 100%.</span>`; };
+  el.querySelectorAll('input[type="range"]').forEach(i=>i.addEventListener('input',sync)); sync(); return el;
 }
 function riskWidget(){
-  const el=widgetShell('Мини-тест риск-профиля', `<div class="widget-grid"><label class="field"><span>Горизонт</span><select id="risk-h"><option value="1">До 1 года</option><option value="2">1–3 года</option><option value="3">Более 3 лет</option></select></label><label class="field"><span>Готовность к просадке</span><select id="risk-d"><option value="1">До 5%</option><option value="2">До 15%</option><option value="3">Более 15%</option></select></label><label class="field"><span>Цель</span><select id="risk-g"><option value="1">Сохранить капитал</option><option value="2">Умеренный рост</option><option value="3">Активный рост</option></select></label></div><div class="result-box" id="riskResult"></div>`);
-  const calc=()=>{ const score=['h','d','g'].reduce((a,x)=>a+(+el.querySelector('#risk-'+x).value),0); let res='Консервативный', text='Больше внимания стабильности и ликвидности.'; if(score>=6){res='Умеренный'; text='Баланс акций, облигаций и денежных инструментов.';} if(score>=8){res='Агрессивный'; text='Выше доля акций и готовность к заметным просадкам.';} el.querySelector('#riskResult').innerHTML=`<strong>${res}</strong><span>${text}</span>`; };
-  el.querySelectorAll('select').forEach(i=>i.addEventListener('change',calc)); calc(); return el;
+  const labels={
+    'risk-h':['До 1 года','1–3 года','Более 3 лет'],
+    'risk-d':['До 5%','До 15%','Более 15%'],
+    'risk-g':['Сохранить капитал','Умеренный рост','Активный рост']
+  };
+  const el=widgetShell('Мини-тест риск-профиля', `<div class="widget-grid">
+    ${rangeField('risk-h','Горизонт',1,3,1,2)}
+    ${rangeField('risk-d','Готовность к просадке',1,3,1,2)}
+    ${rangeField('risk-g','Цель',1,3,1,2)}
+  </div><div class="result-box" id="riskResult"></div>`);
+  const val=(id)=>setRangeLabel(el,id,v=>labels[id][v-1]);
+  const calc=()=>{ const score=val('risk-h')+val('risk-d')+val('risk-g'); let res='Консервативный', text='Больше внимания стабильности и ликвидности.'; if(score>=6){res='Умеренный'; text='Баланс акций, облигаций и денежных инструментов.';} if(score>=8){res='Агрессивный'; text='Выше доля акций и готовность к заметным просадкам.';} el.querySelector('#riskResult').innerHTML=`<strong>${res}</strong><span>${text}</span>`; };
+  el.querySelectorAll('input[type="range"]').forEach(i=>i.addEventListener('input',calc)); calc(); return el;
 }
 function iisWidget(){
-  const el=widgetShell('Калькулятор вычета по ИИС-3', `<div class="widget-grid"><label class="field"><span>Взнос за год, ₽</span><input id="iis-amount" type="number" value="400000"></label><label class="field"><span>Ставка НДФЛ, %</span><select id="iis-tax"><option>13</option><option>15</option><option>18</option><option>20</option><option selected>22</option></select></label><label class="field"><span>Срок, лет</span><input id="iis-years" type="number" value="5"></label></div><div class="result-box" id="iisResult"></div>`);
-  const calc=()=>{ const amount=+el.querySelector('#iis-amount').value||0, tax=(+el.querySelector('#iis-tax').value||0)/100, years=+el.querySelector('#iis-years').value||1; const base=Math.min(amount,400000), deduction=base*tax; el.querySelector('#iisResult').innerHTML=`<strong>${formatMoney(deduction)}</strong><span>Потенциальный возврат за год. База: ${formatMoney(base)}. Для сохранения льгот важно выдержать минимальный срок владения.</span>`; };
-  el.querySelectorAll('input,select').forEach(i=>i.addEventListener('input',calc)); calc(); return el;
+  const el=widgetShell('Калькулятор вычета по ИИС-3', `<div class="widget-grid">
+    ${rangeField('iis-amount','Взнос за год',50000,1000000,50000,400000,' ₽')}
+    ${rangeField('iis-tax','Ставка НДФЛ',13,22,1,22,'%')}
+    ${rangeField('iis-years','Срок владения',1,10,1,5,' лет')}
+  </div><div class="result-box" id="iisResult"></div>`);
+  const calc=()=>{ const amount=setRangeLabel(el,'iis-amount',formatMoney), tax=setRangeLabel(el,'iis-tax',v=>v+'%')/100, years=setRangeLabel(el,'iis-years',v=>v+' лет'); const base=Math.min(amount,400000), deduction=base*tax; el.querySelector('#iisResult').innerHTML=`<strong>${formatMoney(deduction)}</strong><span>Потенциальный возврат за год. База: ${formatMoney(base)}. Срок в калькуляторе: ${years} лет.</span>`; };
+  el.querySelectorAll('input[type="range"]').forEach(i=>i.addEventListener('input',calc)); calc(); return el;
 }
 
 function renderTest(lesson){
@@ -346,6 +396,7 @@ function applyAnswerState(q, chosen, tests){
   const expl=card.querySelector(`#expl-${q}`); expl.classList.remove('hidden'); expl.textContent=tests[q].expl;
 }
 function renderLessonActions(){
+  els.testPanel.querySelectorAll('.lesson-actions').forEach(node=>node.remove());
   const current = appState.activeLesson, last = current === LESSONS.length - 1;
   const html = `<div class="lesson-actions"><button class="btn btn-secondary" id="prevLesson" ${current===0?'disabled':''}>← Предыдущий урок</button><button class="btn btn-primary" id="nextLesson">${last ? 'Перейти к итогу' : 'Следующий урок →'}</button></div>`;
   els.testPanel.insertAdjacentHTML('beforeend', html);

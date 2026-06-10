@@ -4,13 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0a7a63" />
-  <meta name="description" content="АКБФ Академия Инвестиций — интерактивное обучение по инвестициям: уроки, практика, тесты, тренажеры и персональный сертификат." />
+  <meta name="description" content="АКБФ Академия Инвестиций — интерактивное обучение по инвестициям: курсы, практика, тесты и персональный сертификат." />
   <title>АКБФ Академия Инвестиций</title>
-
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link rel="preload" as="style" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" />
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
-
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="icon" href="./icons/icon-192.png" />
   <link rel="apple-touch-icon" href="./icons/icon-192.png" />
@@ -20,145 +18,92 @@
 </head>
 <body>
   <a href="#main" class="skip-link">Перейти к содержимому</a>
-
   <div class="splash" id="splashScreen" aria-hidden="true">
     <div class="splash-card">
-      <div class="splash-logo">A</div>
+      <div class="brand-mark big">A</div>
       <div class="splash-title">АКБФ Академия</div>
-      <div class="splash-sub">Загружаем уроки и тренажеры</div>
+      <div class="splash-sub">Загружаем курсы</div>
       <div class="loader"><span></span><span></span><span></span></div>
     </div>
   </div>
 
-  <div class="onboarding-backdrop hidden" id="onboardingBackdrop"></div>
-  <section class="onboarding hidden" id="onboardingModal" aria-labelledby="onboardingTitle" aria-modal="true" role="dialog">
-    <div class="onboarding-header">
-      <div>
-        <div class="eyebrow">Добро пожаловать</div>
-        <h2 id="onboardingTitle">АКБФ Академия Инвестиций</h2>
-      </div>
-      <button class="icon-btn" id="closeOnboarding" aria-label="Закрыть окно">×</button>
+  <div class="modal-backdrop hidden" id="aboutBackdrop"></div>
+  <section class="about-modal hidden" id="aboutModal" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+    <div class="about-head">
+      <div><div class="eyebrow">О курсе</div><h2 id="aboutTitle">АКБФ Академия Инвестиций</h2></div>
+      <button class="icon-btn" id="closeAbout" aria-label="Закрыть">×</button>
     </div>
-    <p class="onboarding-text">Учебная академия АКБФ: курсы по старту инвестирования, ИИС-3, облигациям, акциям, фондам и золоту. В каждом уроке есть объяснение, пример из экосистемы АКБФ, практический блок и тест.</p>
-    <div class="onboarding-grid">
-      <div class="mini-card"><strong>6 курсов</strong><span>От первого шага до инструментов</span></div>
-      <div class="mini-card"><strong>40+ уроков</strong><span>Короткие темы с примерами АКБФ</span></div>
-      <div class="mini-card"><strong>Тесты</strong><span>Пояснения сразу после ответа</span></div>
-      <div class="mini-card"><strong>Сертификат</strong><span>С вашим именем и датой</span></div>
+    <p>Это учебное PWA-приложение для знакомства с инвестициями. Курсы построены вокруг практических действий: разобраться с инструментом, увидеть пример в экосистеме АКБФ, пройти тренажёр и проверить знания.</p>
+    <div class="about-grid">
+      <div class="mini-card"><strong>6 курсов</strong><span>Старт, ИИС-3, облигации, акции, фонды и золото</span></div>
+      <div class="mini-card"><strong>Практика</strong><span>Калькуляторы, симуляторы и чек-листы</span></div>
+      <div class="mini-card"><strong>Тесты</strong><span>С подсказками и объяснением ответа</span></div>
+      <div class="mini-card"><strong>Сертификат</strong><span>Персональный, в вертикальном формате А4</span></div>
     </div>
-    <div class="btn-row"><button class="btn btn-primary" id="startLearning">Начать обучение</button></div>
   </section>
 
   <div class="app">
-    <aside class="sidebar" id="sidebar" aria-label="Навигация по курсу">
+    <aside class="sidebar" id="sidebar">
       <div class="brand">
         <div class="brand-mark">A</div>
-        <div>
-          <div class="brand-title">АКБФ Академия</div>
-          <div class="brand-sub">Инвестиции простым языком</div>
-        </div>
-        <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему"></button>
+        <div><div class="brand-title">АКБФ Академия</div><div class="brand-sub">инвестиции простым языком</div></div>
       </div>
-
-      <section class="progress-card" aria-labelledby="progress-title">
-        <div class="nav-title" id="progress-title">Прогресс курса</div>
-        <div class="progress-line-text"><strong><span id="completedLessons">0</span></strong><span>тестов</span></div>
-        <div class="progress-bar" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
-        <div class="progress-meta"><span>Тестов: <span id="completedTests">0</span>/6</span><span id="progressPercent">0%</span></div>
-        <div class="btn-row compact">
-          <button class="btn btn-secondary" id="resetProgress">Сбросить</button>
-          <button class="btn btn-primary" id="installApp" disabled>Установить</button>
-        </div>
+      <section class="progress-card">
+        <div class="nav-title">Прогресс</div>
+        <div class="progress-main"><strong id="completedLessons">0</strong><span id="progressTotal">из 0 уроков</span></div>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-meta"><span>Тестов: <span id="completedTests">0</span>/<span id="testsTotal">0</span></span><span id="progressPercent">0%</span></div>
+        <div class="btn-row compact"><button class="btn btn-secondary" id="resetProgress">Сбросить</button><button class="btn btn-primary" id="installApp" disabled>Установить</button></div>
       </section>
-
-      <nav class="desktop-lessons">
-        <div class="nav-title">Уроки</div>
-        <div class="lesson-nav" id="lessonNav"></div>
-      </nav>
-
-      <section class="progress-card certificate-card">
-        <div class="nav-title">Итог курса</div>
-        <p class="panel-intro" id="completionHint">Сертификат откроется после прохождения всех тестов.</p>
-        <button class="btn btn-ghost full" id="openCompletion" disabled>Открыть итог</button>
-      </section>
+      <nav class="course-switcher" id="courseSwitcher" aria-label="Курсы"></nav>
+      <nav class="desktop-lessons"><div class="nav-title">Уроки</div><div class="lesson-nav" id="lessonNav"></div></nav>
+      <section class="progress-card certificate-card"><div class="nav-title">Итог курса</div><p class="panel-intro" id="completionHint">Пройдите тесты курса, чтобы открыть сертификат.</p><button class="btn btn-ghost full" id="openCompletion">Перейти к итогу</button></section>
     </aside>
 
     <div class="content" id="content">
-      <header class="header">
-        <div>
-          <h1 id="pageTitle">АКБФ Академия Инвестиций</h1>
-          <p id="pageSubtitle">курсы, тренажеры, практика и персональный сертификат</p>
-        </div>
-        <div class="header-actions">
-          <span class="chip" id="offlineBadge">Онлайн</span>
-          <span class="chip" id="lessonChip">Урок 1 из 6</span>
-          <button class="btn btn-ghost desktop-only" id="showOnboarding">О курсе</button>
-        </div>
+      <header class="topbar">
+        <div class="mobile-brand"><div class="brand-mark">A</div><div><b>АКБФ Академия</b><span id="mobileCourseName">Выберите курс</span></div></div>
+        <div class="top-actions"><span class="chip" id="offlineBadge">Онлайн</span><button class="btn btn-ghost desktop-only" id="showAbout">О курсе</button></div>
       </header>
 
       <main class="main" id="main">
-        <section class="hero-grid" id="courseTop">
-          <article class="hero-card hero-card-premium">
-            <div class="hero-copy">
-              <div class="chip chip-soft">АКБФ • Академия инвестиций</div>
-              <h2>Как инвестировать на бирже правильно</h2>
-              <p>Выберите курс и проходите обучение на примерах из экосистемы АКБФ: приложение, сайт, карточки инструментов, заявки, календарь выплат и отчеты.</p>
-              <div class="hero-actions">
-                <button class="btn btn-primary" id="continueCourse">Продолжить</button>
-                <button class="btn btn-secondary" id="jumpToTest">К тесту</button>
-              </div>
-            </div>
-            <div class="hero-visual" aria-hidden="true">
-              <svg viewBox="0 0 320 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="24" y="30" width="230" height="154" rx="28" fill="currentColor" opacity=".08"/>
-                <rect x="50" y="62" width="220" height="154" rx="24" fill="currentColor" opacity=".14"/>
-                <path d="M82 166L126 122L158 150L226 82" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M206 82H226V104" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="78" cy="84" r="16" fill="currentColor" opacity=".22"/>
-                <circle cx="268" cy="192" r="18" fill="currentColor" opacity=".22"/>
-              </svg>
-            </div>
-          </article>
+        <section class="catalog-view" id="catalogView">
+          <div class="catalog-head">
+            <h1>Выберите курс на свой вкус</h1>
+            <p>Начните с базовых тем или углубитесь в конкретный инструмент. Каждый курс можно проходить отдельно.</p>
+            <div class="filter-row"><button class="filter active" data-filter="all">Все курсы</button><button class="filter" data-filter="start">Чтобы начать инвестировать</button><button class="filter" data-filter="deep">Прокачать знания</button></div>
+          </div>
+          <div class="course-grid" id="courseGrid"></div>
         </section>
 
-        <section class="panel lesson-panel" id="lessonPanel"></section>
-        <section class="panel widget" id="widgetPanel"></section>
-        <section class="panel practice-panel" id="practicePanel"></section>
-        <section class="panel test-panel" id="testPanel"></section>
+        <section class="lesson-view hidden" id="lessonView">
+          <article class="panel lesson-panel" id="lessonPanel"></article>
+          <section class="panel widget" id="widgetPanel"></section>
+          <section class="panel practice-panel" id="practicePanel"></section>
+          <section class="panel test-panel" id="testPanel"></section>
+        </section>
 
         <section class="panel completion-panel hidden" id="completionPanel">
           <div class="completion-wrap">
             <div class="completion-copy">
               <div class="eyebrow">Финальный шаг</div>
-              <h3>Персональный сертификат</h3>
-              <p class="panel-intro">Введите ФИО так, как оно должно отображаться в сертификате. После этого станет доступна кнопка скачивания.</p>
-              <label class="field certificate-field">
-                <span>ФИО для сертификата</span>
-                <input id="certificateNameInput" type="text" placeholder="Например: Иванов Иван Иванович" autocomplete="name" />
-              </label>
-              <div class="completion-kpis">
-                <div class="mini-card"><strong id="finalLessons">0/6</strong><span>Уроков пройдено</span></div>
-                <div class="mini-card"><strong id="finalTests">0/6</strong><span>Тестов завершено</span></div>
-                <div class="mini-card"><strong id="finalScore">0</strong><span>Верных ответов</span></div>
-              </div>
-              <div class="btn-row">
-                <button class="btn btn-primary" id="downloadCertificate" disabled>Скачать сертификат</button>
-                <button class="btn btn-secondary" id="scrollToLessons">Повторить уроки</button>
-              </div>
-              <p class="footer-note">Сертификат подтверждает прохождение учебного курса и не является документом о квалификации инвестора.</p>
+              <h3 id="completionTitle">Персональный сертификат</h3>
+              <p class="panel-intro" id="completionText">Сертификат откроется после прохождения всех тестов курса.</p>
+              <label class="field certificate-field hidden" id="certificateNameField"><span>ФИО для сертификата</span><input id="certificateNameInput" type="text" placeholder="Например: Иванов Иван Иванович" autocomplete="name" /></label>
+              <div class="completion-kpis"><div class="mini-card"><strong id="finalLessons">0/0</strong><span>Уроков</span></div><div class="mini-card"><strong id="finalTests">0/0</strong><span>Тестов</span></div><div class="mini-card"><strong id="finalScore">0</strong><span>Верных ответов</span></div></div>
+              <div class="btn-row"><button class="btn btn-primary" id="downloadCertificate" disabled>Скачать сертификат</button><button class="btn btn-secondary" id="backToCourse">Вернуться к урокам</button></div>
+              <p class="footer-note">Сертификат подтверждает прохождение учебного курса АКБФ Академии и не является документом о квалификации инвестора.</p>
             </div>
             <div class="certificate-preview">
               <div class="certificate-shell" id="certificateCard">
-                <div class="cert-pattern" aria-hidden="true"></div>
+                <div class="cert-pattern"></div>
                 <div class="certificate-top">АКБФ Академия Инвестиций</div>
                 <div class="certificate-title">Сертификат</div>
-                <div class="certificate-subtitle">о прохождении курса<br>«АКБФ Академия инвестиций»</div>
+                <div class="certificate-subtitle">о прохождении курса</div>
+                <div class="certificate-course" id="certificateCourse">Название курса</div>
                 <div class="certificate-name" id="certificateName">ФИО участника</div>
-                <div class="certificate-text">Подтверждает прохождение учебного курса по основам инвестирования: финансовые цели, акции, облигации, фонды, риск-профиль, налоги и ИИС-3.</div>
-                <div class="certificate-bottom">
-                  <div><strong>Дата</strong><span id="certificateDate">—</span></div>
-                  <div><strong>Результат</strong><span id="certificateStatus">Курс завершен</span></div>
-                </div>
+                <div class="certificate-text">Участник изучил основные понятия курса, выполнил практические задания и прошёл проверочные тесты.</div>
+                <div class="certificate-bottom"><div><strong>Дата</strong><span id="certificateDate">—</span></div><div><strong>Статус</strong><span id="certificateStatus">Курс завершен</span></div></div>
               </div>
             </div>
           </div>
@@ -170,16 +115,16 @@
   <div class="lesson-sheet-backdrop hidden" id="lessonSheetBackdrop"></div>
   <section class="lesson-sheet hidden" id="lessonSheet" aria-label="Выбор урока">
     <div class="sheet-handle"></div>
-    <div class="sheet-head"><strong>Выберите урок</strong><button class="icon-btn" id="closeLessonSheet">×</button></div>
+    <div class="sheet-head"><div><strong id="sheetCourseTitle">Уроки курса</strong><span id="sheetCourseSub">Выберите тему</span></div><button class="icon-btn" id="closeLessonSheet">×</button></div>
     <div class="lesson-sheet-list" id="lessonSheetList"></div>
   </section>
 
   <nav class="bottom-nav" aria-label="Мобильная навигация">
-    <button data-mobile-action="course" class="bottom-link active"><span>⌂</span><b>Курс</b></button>
+    <button data-mobile-action="courses" class="bottom-link active"><span>⌂</span><b>Курсы</b></button>
     <button data-mobile-action="lessons" class="bottom-link"><span>☰</span><b>Уроки</b></button>
-    <button data-mobile-action="practice" class="bottom-link"><span>✓</span><b>Практика</b></button>
+    <button data-mobile-action="practice" class="bottom-link"><span>◈</span><b>Практика</b></button>
     <button data-mobile-action="test" class="bottom-link"><span>?</span><b>Тест</b></button>
-    <button data-mobile-action="final" class="bottom-link"><span>★</span><b>Итог</b></button>
+    <button data-mobile-action="final" class="bottom-link"><span>✓</span><b>Итог</b></button>
   </nav>
 </body>
 </html>

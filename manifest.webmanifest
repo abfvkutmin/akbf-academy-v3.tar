@@ -1,26 +1,16 @@
 {
   "name": "АКБФ Академия Инвестиций",
   "short_name": "АКБФ Академия",
-  "description": "Интерактивное PWA-обучение по инвестициям с уроками, тестами и калькуляторами.",
+  "description": "Интерактивное обучение по инвестициям: уроки, тренажеры, тесты и персональный сертификат.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f7f6f2",
-  "theme_color": "#01696f",
+  "background_color": "#f6f8f5",
+  "theme_color": "#0a7a63",
   "lang": "ru",
   "orientation": "portrait-primary",
   "icons": [
-    {
-      "src": "./icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "./icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ]
 }

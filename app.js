@@ -1,692 +1,430 @@
 const LESSONS = [
   {
     id: 1,
+    icon: '🎯',
+    category: 'Старт',
     title: 'Финансовые цели и стартовый капитал',
     goal: 'После урока вы поймете, какие деньги можно направлять в инвестиции, а какие лучше оставить в резерве.',
-    concepts: ['финансовая цель', 'подушка безопасности', 'горизонт инвестирования', 'сложный процент'],
+    concepts: ['цель', 'резерв', 'горизонт', 'сложный процент'],
+    visual: 'goal',
     sections: [
-      'Начинайте не с выбора акции, а с финансовой цели. Инвестиции работают лучше, когда понятно, зачем вы вкладываете деньги: накопить резерв, сформировать капитал на крупную покупку, подготовиться к будущим расходам или постепенно увеличивать семейные сбережения.',
-      'Хорошая цель отвечает на четыре вопроса: какая сумма нужна, к какому сроку, сколько вы готовы пополнять регулярно и какую просадку сможете выдержать без паники. Такой подход помогает не путать инвестиции с азартной попыткой быстро заработать.',
-      'Регулярные вложения запускают эффект сложного процента: полученный доход остается внутри капитала и начинает приносить новый доход. В долгосрочном инвестировании дисциплина часто важнее попыток поймать идеальный момент для покупки.'
+      'Инвестиции начинаются не с выбора акции, а с цели. Когда понятны сумма, срок и регулярный взнос, проще выбрать подходящие инструменты и не реагировать на каждое движение рынка.',
+      'Сначала отделите резерв от инвестиционных денег. Резерв нужен для жизни и непредвиденных расходов, а инвестиционный капитал можно размещать на срок, который соответствует вашей цели.',
+      'Регулярность часто важнее попытки угадать идеальный момент входа. Даже небольшие пополнения со временем начинают работать сильнее за счет сложного процента.'
     ],
-    tipTitle: 'Правило финансовой подушки безопасности',
-    tipText: 'Не инвестируйте последние деньги. Сначала сформируйте резерв на 3–6 месяцев обязательных расходов. Подушка должна быть доступна быстро: на счете, вкладе или другом ликвидном инструменте.',
+    tipTitle: 'Финансовая подушка — до инвестиций',
+    tipText: 'Сформируйте резерв на 3–6 месяцев обязательных расходов. Эти деньги лучше хранить в ликвидных инструментах, чтобы быстро воспользоваться ими при необходимости.',
     widget: 'capital-calc',
     tests: [
-      {q:'Что такое финансовая подушка безопасности?', answers:['Резервный фонд на 3–6 месяцев расходов на надежном и ликвидном счете','Деньги для спекулятивной торговли','Любой капитал, вложенный в акции'], correct:0, expl:'Финансовая подушка нужна для непредвиденных ситуаций. Ее лучше хранить в ликвидных инструментах, а не подвергать рыночному риску.'},
-      {q:'Какое решение считается наиболее разумным на старте?', answers:['Определить цели, сформировать подушку и регулярно инвестировать комфортную сумму','Вложить все свободные деньги в одну идею','Открыть несколько счетов и постоянно переключаться между активами'], correct:0, expl:'На старте важны цель, резерв, регулярность и диверсификация. Это снижает риск эмоциональных решений.'},
-      {q:'В чем суть сложного процента?', answers:['Доход реинвестируется и начинает приносить новый доход','Доход выплачивается на карту и тратится','Процент фиксируется навсегда'], correct:0, expl:'Сложный процент работает, когда доход остается в капитале и участвует в дальнейшем росте.'}
+      {q:'Что такое финансовая подушка безопасности?', answers:['Резерв на 3–6 месяцев расходов в надежном и ликвидном инструменте','Деньги для покупки самых доходных акций','Кредитный лимит на карте'], correct:0, expl:'Подушка нужна для непредвиденных ситуаций. Ее не стоит подвергать рыночному риску.'},
+      {q:'Что лучше сделать перед первой инвестицией?', answers:['Определить цель, срок, взнос и допустимый риск','Купить одну популярную акцию на всю сумму','Открыть счет и сразу торговать каждый день'], correct:0, expl:'План снижает риск эмоциональных решений и помогает выбирать инструменты осознанно.'},
+      {q:'Когда работает сложный процент?', answers:['Когда доход остается внутри капитала и начинает приносить новый доход','Когда деньги каждый месяц снимаются со счета','Когда ставка фиксирована навсегда'], correct:0, expl:'Сложный процент усиливается при реинвестировании дохода и регулярных пополнениях.'}
     ]
   },
   {
     id: 2,
+    icon: '📈',
+    category: 'Активы',
     title: 'Акции — покупаем долю в бизнесе',
-    goal: 'После урока вы поймете, что покупка акции — это покупка доли в бизнесе, а не гарантированный процентный доход.',
-    concepts: ['акция', 'дивиденды', 'капитализация', 'волатильность'],
+    goal: 'После урока вы поймете, что акция — это доля в бизнесе, а не гарантированный процентный доход.',
+    concepts: ['акция', 'дивиденды', 'рост цены', 'волатильность'],
+    visual: 'stocks',
     sections: [
-      'Акция — это не просто цена на экране, а доля в бизнесе. Покупая акцию, вы становитесь совладельцем компании и участвуете в ее финансовом результате: через рост стоимости бумаги и, если компания принимает такое решение, через дивиденды.',
-      'Цена акции может расти и снижаться из-за отчетности, новостей, изменения ставок, ожиданий инвесторов и ситуации в отрасли. Поэтому перед покупкой важно понимать не только потенциальную доходность, но и причины возможной просадки.',
-      'Перед покупкой акции полезно понять, чем компания зарабатывает, насколько устойчивы ее прибыль и долг, есть ли дивидендная история и какие риски есть в отрасли.'
+      'Покупая акцию, вы становитесь совладельцем компании. Ваш результат зависит от того, как развивается бизнес и как рынок оценивает его перспективы.',
+      'Доход по акциям может складываться из роста цены и дивидендов. Но ни одно из этих событий не гарантировано: цена может снижаться, а дивиденды могут изменяться или отменяться.',
+      'Перед покупкой полезно понять бизнес-модель компании, долговую нагрузку, отраслевые риски и историю выплат. Так акция превращается из случайной идеи в осознанное решение.'
     ],
-    tipTitle: 'Обыкновенные и привилегированные акции',
-    tipText: 'Обыкновенные акции обычно дают право голоса на собрании акционеров. Привилегированные акции часто имеют особенности по дивидендам, но конкретные права зависят от устава компании.',
+    tipTitle: 'Главный вопрос перед покупкой акции',
+    tipText: 'Спросите себя: почему этот бизнес может стоить дороже через несколько лет и что может помешать этому сценарию?',
     widget: 'stock-simulator',
     tests: [
-      {q:'Что дает инвестору покупка акции?', answers:['Долю в бизнесе компании и право претендовать на часть ее успеха','Фиксированную ставку дохода','Только право на купон'], correct:0, expl:'Акция — долевая ценная бумага. Она дает участие в бизнесе, но не гарантирует доход.'},
-      {q:'Из чего может складываться доходность акций?', answers:['Из роста рыночной стоимости и дивидендов','Только из дивидендов','Только из налогового вычета'], correct:0, expl:'Инвестор может заработать на росте цены акции и на дивидендных выплатах, если компания их объявляет.'},
-      {q:'Почему акции считаются рискованнее облигаций?', answers:['Цена сильнее колеблется, а выплаты не гарантированы','Потому что акции нельзя продать','Потому что по ним всегда отрицательная доходность'], correct:0, expl:'По акциям нет обязательства вернуть вложенную сумму или регулярно выплачивать доход.'}
+      {q:'Что получает инвестор при покупке акции?', answers:['Долю в бизнесе компании','Обязательство вернуть номинал','Гарантированный купон'], correct:0, expl:'Акция — долевой инструмент. Она дает участие в бизнесе, но не гарантирует доход.'},
+      {q:'Из чего может складываться доход по акциям?', answers:['Из роста цены и дивидендов','Только из купонов','Только из налогового вычета'], correct:0, expl:'Инвестор может заработать на росте рыночной цены и дивидендах, если компания их выплачивает.'},
+      {q:'Почему акции рискованнее облигаций?', answers:['Цена сильнее меняется, а выплаты не гарантированы','Акции нельзя продать','Акции доступны только квалифицированным инвесторам'], correct:0, expl:'У акций нет обязательства вернуть вложенные деньги или регулярно платить доход.'}
     ]
   },
   {
     id: 3,
+    icon: '🛡️',
+    category: 'Активы',
     title: 'Облигации — даем в долг государству и бизнесу',
-    goal: 'После урока вы поймете, почему купон — не вся доходность облигации и какие риски есть даже у долговых инструментов.',
-    concepts: ['номинал', 'купон', 'НКД', 'доходность к погашению', 'ОФЗ'],
+    goal: 'После урока вы поймете, почему купон — не вся доходность облигации и какие риски есть у долговых инструментов.',
+    concepts: ['номинал', 'купон', 'цена', 'доходность к погашению'],
+    visual: 'bonds',
     sections: [
-      'Облигацию удобно воспринимать как заем, оформленный в виде ценной бумаги. Инвестор дает деньги эмитенту, а эмитент обязуется платить купоны и вернуть номинал в дату погашения по условиям выпуска.',
-      'Главная ошибка новичка — смотреть только на купон. Итоговый результат зависит от цены покупки, срока до погашения, купона, налогов, ликвидности и надежности эмитента. Поэтому в карточке облигации важно сравнивать несколько параметров сразу.',
-      'Облигации бывают государственными, субфедеральными и корпоративными. Чем выше риск эмитента, тем выше может быть доходность, но вместе с ней растет и вероятность неблагоприятного сценария.'
+      'Облигация — это заем в виде ценной бумаги. Инвестор дает деньги эмитенту, а эмитент обязан платить купоны и вернуть номинал по условиям выпуска.',
+      'Не смотрите только на купон. Итоговый результат зависит от цены покупки, срока до погашения, налогов, ликвидности и надежности эмитента.',
+      'Чем выше доходность облигации, тем внимательнее стоит изучить причину. Иногда рынок закладывает повышенный кредитный риск или низкую ликвидность.'
     ],
-    tipTitle: 'Основные параметры облигаций',
-    tipText: 'Номинал — сумма долга, которую эмитент должен вернуть при погашении. Купон — регулярная процентная выплата. Срок погашения — дата, когда эмитент должен вернуть номинал.',
+    tipTitle: 'Купон и доходность — не одно и то же',
+    tipText: 'Если облигация куплена ниже или выше номинала, доходность к погашению может заметно отличаться от купонной ставки.',
     widget: 'bond-calculator',
     tests: [
-      {q:'Что происходит, когда инвестор покупает облигацию?', answers:['Он дает деньги эмитенту в долг под условия выпуска','Он покупает долю в бизнесе','Он получает право на дивиденды'], correct:0, expl:'Облигация — долговой инструмент: эмитент обязан платить купоны и вернуть номинал по условиям выпуска.'},
-      {q:'Почему купон не равен полной доходности?', answers:['Потому что важны цена покупки, срок и погашение','Потому что налог отменяет купон','Потому что купон выплачивается только по акциям'], correct:0, expl:'Если цена покупки отличается от номинала, итоговая доходность может отличаться от купонной ставки.'},
-      {q:'Что такое ОФЗ?', answers:['Облигации федерального займа','Общий фонд защиты','Опционный финансовый заем'], correct:0, expl:'ОФЗ выпускаются государством и относятся к наиболее надежным долговым инструментам в России.'}
+      {q:'Что происходит при покупке облигации?', answers:['Инвестор дает деньги эмитенту в долг','Инвестор покупает долю бизнеса','Инвестор получает дивиденды'], correct:0, expl:'Облигация — долговой инструмент с условиями купонов и погашения.'},
+      {q:'Почему купон не равен полной доходности?', answers:['Важны цена покупки и срок до погашения','Потому что купон не выплачивается','Потому что доходность всегда равна ключевой ставке'], correct:0, expl:'Цена, срок, купон и погашение вместе формируют доходность к погашению.'},
+      {q:'Что такое ОФЗ?', answers:['Облигации федерального займа','Фонд на акции','Опцион с фиксированной защитой'], correct:0, expl:'ОФЗ выпускаются государством и считаются одним из наиболее надежных долговых инструментов в России.'}
     ]
   },
   {
     id: 4,
+    icon: '🧩',
+    category: 'Фонды',
     title: 'ПИФы и ETF — готовые инвестиции',
     goal: 'После урока вы поймете, как один пай фонда может заменить набор из десятков отдельных бумаг.',
-    concepts: ['ПИФ', 'БПИФ', 'ETF', 'пай', 'диверсификация', 'комиссия фонда'],
+    concepts: ['ПИФ', 'БПИФ', 'ETF', 'диверсификация', 'комиссия'],
+    visual: 'funds',
     sections: [
-      'Фонды помогают купить не одну бумагу, а готовую корзину активов. Внутри могут быть акции, облигации, инструменты денежного рынка или смешанный набор — в зависимости от стратегии фонда.',
-      'Это удобно для старта: вместо самостоятельного выбора десятков эмитентов вы покупаете один пай и получаете долю в готовом портфеле. Но фонд тоже нужно выбирать осознанно: смотреть состав, комиссию, ликвидность и риск стратегии.',
-      'У фондов есть комиссия за управление, которая уже учитывается в стоимости пая. Перед покупкой полезно посмотреть состав фонда, стратегию, ликвидность, размер комиссии и историю стоимости пая.'
+      'Фонд — это готовая корзина активов. Внутри могут быть акции, облигации, инструменты денежного рынка или смешанный набор.',
+      'Фонды удобны для старта: одной покупкой можно получить долю в большом портфеле. Это экономит время и помогает снизить зависимость от одной бумаги.',
+      'Перед покупкой фонда смотрите стратегию, состав, комиссию, ликвидность и динамику стоимости пая. Готовое решение тоже требует осознанного выбора.'
     ],
-    tipTitle: 'Удобство готовых решений',
-    tipText: 'Фонд дает доступ к набору активов одной покупкой, но доходность не гарантирует.',
+    tipTitle: 'Фонд не отменяет риск',
+    tipText: 'Фонд помогает диверсифицировать портфель, но его стоимость тоже может снижаться в зависимости от активов внутри.',
     widget: 'etf-pie',
     tests: [
-      {q:'Что такое ПИФ или ETF?', answers:['Форма коллективных инвестиций с набором активов внутри','Разновидность банковского вклада','Гарантированный способ получить фиксированный доход'], correct:0, expl:'Фонд объединяет средства инвесторов и покупает набор активов по выбранной стратегии.'},
-      {q:'В чем ключевое преимущество фондов?', answers:['Автоматическая диверсификация и экономия времени','Полное отсутствие риска','Обязательная доходность выше рынка'], correct:0, expl:'Фонд дает доступ к набору активов одной покупкой, но доходность не гарантирует.'},
-      {q:'Как обычно удерживается комиссия фонда?', answers:['Автоматически из активов фонда','Отдельным ежемесячным платежом на карту','Только при закрытии брокерского счета'], correct:0, expl:'Комиссия управляющей компании учитывается внутри чистых активов фонда и влияет на стоимость пая.'}
+      {q:'Что такое фонд в инвестициях?', answers:['Готовый набор активов, разделенный на паи','Кредитный договор','Гарантированный вклад'], correct:0, expl:'Фонд объединяет средства инвесторов и покупает активы по выбранной стратегии.'},
+      {q:'В чем преимущество фондов?', answers:['Диверсификация одной покупкой','Полное отсутствие риска','Обязательная доходность выше рынка'], correct:0, expl:'Фонд позволяет купить набор активов, но не гарантирует доходность.'},
+      {q:'Где обычно учитывается комиссия фонда?', answers:['В стоимости чистых активов фонда','Отдельным счетом каждый день','Только при закрытии ИИС'], correct:0, expl:'Комиссия управляющей компании влияет на стоимость пая и обычно уже учтена внутри фонда.'}
     ]
   },
   {
     id: 5,
+    icon: '⚖️',
+    category: 'Стратегия',
     title: 'Риски и составление личного портфеля',
     goal: 'После урока вы поймете, какой уровень риска вам ближе и почему портфель лучше собирать из разных активов.',
-    concepts: ['риск-профиль', 'диверсификация', 'распределение активов', 'портфель 60/40'],
+    concepts: ['риск-профиль', 'просадка', 'диверсификация', 'баланс'],
+    visual: 'risk',
     sections: [
-      'Риск — это не только возможность потерять деньги. Это еще и вероятность, что результат будет отличаться от ожиданий: цена временно снизится, доходность окажется ниже плана или деньги понадобятся раньше срока.',
-      'Диверсификация защищает от зависимости от одной идеи. Когда в портфеле есть разные классы активов, отрасли и эмитенты, ошибка в одной бумаге не определяет судьбу всего капитала.',
-      'Классический умеренный подход часто описывают как сочетание 60% акций и 40% облигаций. Это не универсальный рецепт, а учебный ориентир: доли зависят от целей, срока, возраста, дохода и готовности к просадкам.'
+      'Риск — это не только вероятность потерять деньги, но и готовность выдерживать временные просадки. Чем выше потенциальная доходность, тем выше колебания портфеля.',
+      'Распределение активов помогает не зависеть от одной идеи. В портфеле могут сочетаться акции, облигации, фонды денежного рынка и защитные инструменты.',
+      'Риск-профиль нужен, чтобы портфель соответствовал вашему сроку, доходу, цели и психологической готовности к снижению стоимости активов.'
     ],
-    tipTitle: 'Учебный ориентир',
-    tipText: 'Соотношение 60/40 — не обязательная формула, а наглядный пример баланса между ростом и стабильностью.',
+    tipTitle: 'Портфель должен быть удобен именно вам',
+    tipText: 'Даже доходная стратегия не подходит, если вы продаете активы в первую же просадку. Комфортный риск помогает сохранять дисциплину.',
     widget: 'risk-profiler',
     tests: [
-      {q:'Как связаны риск и потенциальная доходность?', answers:['Чем выше риск, тем выше потенциальная доходность и вероятность потерь','Риск и доходность не связаны','Высокий риск всегда означает гарантированную прибыль'], correct:0, expl:'Повышенная потенциальная доходность обычно является компенсацией за дополнительный риск.'},
-      {q:'Что такое диверсификация?', answers:['Распределение капитала между разными активами и эмитентами','Покупка только одного надежного актива','Полный отказ от облигаций'], correct:0, expl:'Диверсификация снижает зависимость портфеля от одной бумаги, отрасли или идеи.'},
-      {q:'Какое сочетание часто называют классическим умеренным портфелем?', answers:['60% акций и 40% облигаций','90% кэш и 10% акции','100% акции'], correct:0, expl:'Соотношение 60/40 — учебный ориентир для баланса между ростом и стабильностью.'}
+      {q:'Что обычно связано с повышенной потенциальной доходностью?', answers:['Повышенный риск и возможные просадки','Гарантия сохранности капитала','Отсутствие налогов'], correct:0, expl:'Рынок обычно платит за риск, но результат не гарантирован.'},
+      {q:'Что такое диверсификация?', answers:['Распределение капитала между разными активами','Покупка одной акции на всю сумму','Полный отказ от облигаций'], correct:0, expl:'Диверсификация снижает зависимость портфеля от одного инструмента или эмитента.'},
+      {q:'Зачем нужен риск-профиль?', answers:['Чтобы подобрать портфель под цель, срок и готовность к просадкам','Чтобы получить гарантированный доход','Чтобы не платить комиссии'], correct:0, expl:'Риск-профиль помогает выбрать более подходящее соотношение активов.'}
     ]
   },
   {
     id: 6,
+    icon: '🧾',
+    category: 'Налоги',
     title: 'Налоги и государственные льготы — ИИС-3',
     goal: 'После урока вы поймете, как работает ИИС-3, почему вычет зависит от ставки НДФЛ и когда льготы можно потерять.',
-    concepts: ['ИИС-3', 'НДФЛ', 'вычет на взнос', 'льгота на доход', 'минимальный срок владения'],
+    concepts: ['ИИС-3', 'НДФЛ', 'вычет', 'льгота на доход', 'срок'],
+    visual: 'tax',
     sections: [
-      'Налоги — важная часть инвестиционного результата. Итоговая доходность зависит не только от цены покупки и продажи, но и от того, какой налог возникнет, можно ли применить льготу и выполняются ли условия счета.',
-      'ИИС-3 помогает инвестировать с налоговыми преимуществами: можно получить вычет на взносы и льготу на инвестиционный доход при соблюдении условий. Но это инструмент для среднесрочной и долгосрочной цели, а не счет для денег, которые могут срочно понадобиться.',
-      'Если закрыть ИИС-3 раньше минимального срока, право на льготы утрачивается: ранее полученные вычеты нужно вернуть, а доход может быть обложен налогом.'
+      'ИИС-3 — индивидуальный инвестиционный счет третьего типа. Он совмещает вычет на взносы и льготу на инвестиционный доход при соблюдении условий.',
+      'Пополнять ИИС-3 можно без ограничения по сумме, но база для ежегодного вычета ограничена 400 000 ₽. Размер возврата зависит от вашей ставки НДФЛ и фактически уплаченного налога.',
+      'Для счетов, открытых в 2024–2026 годах, минимальный срок владения для сохранения льгот — 5 лет. При досрочном закрытии льготы теряются.'
     ],
-    tipTitle: 'Ключевые условия ИИС-3',
-    tipText: 'Ограничения по сумме пополнений нет, но вычет рассчитывается только с базы до 400 000 ₽ в год. При ставке НДФЛ 22% максимальный возврат может составить до 88 000 ₽ в год. Для счетов, открытых в 2024–2026 годах, минимальный срок владения для сохранения льгот — 5 лет.',
+    tipTitle: 'ИИС-3 — инструмент для длинной цели',
+    tipText: 'Если деньги могут понадобиться раньше минимального срока, обычный брокерский счет или более ликвидные инструменты могут быть удобнее.',
     widget: 'iis-calculator',
     tests: [
-      {q:'Что такое ИИС-3?', answers:['Брокерский счет с налоговыми льготами при соблюдении условий','Любой банковский вклад','Отдельный налог на инвестиции'], correct:0, expl:'ИИС-3 — инвестиционный счет, который совмещает вычет на взносы и льготу на инвестиционный доход при выполнении условий.'},
-      {q:'С какой базы рассчитывается ежегодный вычет на взносы по ИИС-3?', answers:['С суммы до 400 000 ₽ в год','Со всей суммы пополнения без ограничения','Только со 100 000 ₽'], correct:0, expl:'Пополнять можно больше, но база для расчета вычета ограничена 400 000 ₽ в год.'},
-      {q:'Какой максимальный возврат возможен при ставке НДФЛ 22%?', answers:['88 000 ₽','40 000 ₽','120 000 ₽'], correct:0, expl:'22% от 400 000 ₽ = 88 000 ₽. Итог зависит от фактически уплаченного НДФЛ.'}
+      {q:'Что такое ИИС-3?', answers:['Инвестиционный счет с налоговыми льготами при соблюдении условий','Обычный банковский вклад','Страховой полис'], correct:0, expl:'ИИС-3 дает налоговые преимущества, но требует соблюдения условий и срока владения.'},
+      {q:'С какой базы рассчитывается ежегодный вычет на взнос?', answers:['До 400 000 ₽ в год','С любой суммы без ограничений','Только с 1 млн ₽'], correct:0, expl:'Пополнения могут быть больше, но база для вычета ограничена 400 000 ₽ в год.'},
+      {q:'Какой максимальный возврат возможен при ставке НДФЛ 22%?', answers:['88 000 ₽','52 000 ₽','400 000 ₽'], correct:0, expl:'22% от 400 000 ₽ = 88 000 ₽ при наличии достаточного уплаченного НДФЛ.'}
     ]
   }
 ];
 
 const PRACTICES = {
-  1: {
-    title: 'Соберите финансовый фундамент',
-    text: 'Перед стартом инвестиций проверьте, что у вас есть понятная цель и резерв на непредвиденные расходы.',
-    checks: ['Записал одну финансовую цель с суммой и сроком', 'Рассчитал резерв на 3–6 месяцев расходов', 'Определил комфортную сумму регулярного пополнения']
-  },
-  2: {
-    title: 'Разберите акцию как долю в бизнесе',
-    text: 'Выберите знакомую компанию и оцените ее не как тикер, а как реальный бизнес.',
-    checks: ['Понял, чем компания зарабатывает', 'Проверил, есть ли дивидендная история', 'Записал один фактор роста и один риск']
-  },
-  3: {
-    title: 'Сравните параметры облигации',
-    text: 'Посмотрите на облигацию через цену, купон, срок и надежность эмитента.',
-    checks: ['Проверил срок погашения', 'Сравнил купон и доходность к погашению', 'Оценил кредитный риск эмитента']
-  },
-  4: {
-    title: 'Соберите учебный портфель из фондов',
-    text: 'Попробуйте распределить доли между акциями, облигациями и защитными активами.',
-    checks: ['Сумма долей в портфеле равна 100%', 'В портфеле есть минимум два класса активов', 'Проверил комиссию и состав фонда']
-  },
-  5: {
-    title: 'Определите комфортный уровень риска',
-    text: 'Подумайте, какую просадку вы сможете выдержать без эмоциональной продажи активов.',
-    checks: ['Выбрал допустимую просадку портфеля', 'Понял свой инвестиционный горизонт', 'Сформулировал, когда буду пересматривать портфель']
-  },
-  6: {
-    title: 'Оцените пользу ИИС-3 для своей цели',
-    text: 'Сравните потенциальный налоговый вычет, срок владения и готовность не закрывать счет досрочно.',
-    checks: ['Ввел сумму взноса в калькулятор', 'Понял ограничение базы вычета 400 000 ₽', 'Проверил, подходит ли срок 5 лет для моей цели']
-  },
-  default: {
-    title: 'Закрепите материал',
-    text: 'Выполните короткую проверку перед переходом к тесту.',
-    checks: ['Прочитал материал', 'Проверил ключевые понятия', 'Выполнил расчет в тренажере']
-  }
+  1: { title:'Соберите стартовую карту', text:'Запишите одну цель, срок и сумму регулярного пополнения. Отдельно рассчитайте резерв на 3–6 месяцев расходов.', checks:['Цель выражена в рублях','Понятен срок цели','Резерв отделен от инвестиций'] },
+  2: { title:'Разберите одну компанию', text:'Выберите публичную компанию и коротко ответьте: чем она зарабатывает, есть ли дивиденды и какой главный риск у бизнеса.', checks:['Понятна бизнес-модель','Проверена дивидендная история','Записан главный риск'] },
+  3: { title:'Сравните две облигации', text:'Сравните две облигации с похожим сроком: эмитент, купон, цена, доходность к погашению и рейтинг.', checks:['Сравнен эмитент','Проверена доходность к погашению','Понятен главный риск'] },
+  4: { title:'Проверьте фонд', text:'Откройте карточку любого фонда и найдите его состав, комиссию и стратегию.', checks:['Найден состав фонда','Проверена комиссия','Понятна стратегия'] },
+  5: { title:'Определите комфортную просадку', text:'Выберите снижение портфеля, которое вы готовы выдержать без эмоциональной продажи: 5%, 10%, 20% или больше.', checks:['Выбрана комфортная просадка','Понятен срок инвестирования','Портфель не зависит от одного актива'] },
+  6: { title:'Оцените ИИС-3 для своей цели', text:'Введите сумму взноса и ставку НДФЛ в калькуляторе. Проверьте, готовы ли держать счет не менее 5 лет.', checks:['Проверена база 400 000 ₽','Выбрана ставка НДФЛ','Цель подходит под срок ИИС-3'] }
 };
 
-const STORAGE_KEY = 'akbf-academy-pwa-final-2';
+const STORAGE_KEY = 'akbf-academy-polished-v1';
 const appState = {
   activeLesson: 0,
   theme: 'light',
   progress: { lessons: Array(6).fill(false), tests: Array(6).fill(false), scores: Array(6).fill(0) },
   answered: {},
   practice: {},
-  sim: { cash: 100000, shares: 0, avgPrice: 0, price: 124.8, history: [118,120,119,122,121,124,126,125,127,126,128,124.8] }
+  sim: { price: 100, cash: 100000, shares: 0, avgPrice: 0, history: [95,98,97,101,100,103,104,102,106,108,107,110] },
+  certificateName: ''
 };
 
-const els = {
-  nav: document.getElementById('lessonNav'),
-  lessonPanel: document.getElementById('lessonPanel'),
-  widgetPanel: document.getElementById('widgetPanel'),
-  testPanel: document.getElementById('testPanel'),
-  progressFill: document.getElementById('progressFill'),
-  completedLessons: document.getElementById('completedLessons'),
-  completedTests: document.getElementById('completedTests'),
-  progressPercent: document.getElementById('progressPercent'),
-  pageTitle: document.getElementById('pageTitle'),
-  pageSubtitle: document.getElementById('pageSubtitle'),
-  lessonChip: document.getElementById('lessonChip'),
-  themeToggle: document.querySelector('[data-theme-toggle]'),
-  sidebar: document.getElementById('sidebar'),
-  menuToggle: document.getElementById('menuToggle'),
-  resetBtn: document.getElementById('resetProgress'),
-  installBtn: document.getElementById('installApp'),
-  embedCode: document.getElementById('embedCode'),
-  offlineBadge: document.getElementById('offlineBadge'),
-  completionHint: document.getElementById('completionHint')
-};
-
+const els = {};
 let deferredPrompt = null;
 
-function safeLoad() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return;
-    const data = JSON.parse(raw);
-    if (data && typeof data === 'object') {
-      Object.assign(appState, data);
-      appState.progress.lessons = data.progress?.lessons || Array(6).fill(false);
-      appState.progress.tests = data.progress?.tests || Array(6).fill(false);
-      appState.progress.scores = data.progress?.scores || Array(6).fill(0);
-      appState.answered = data.answered || {};
-      appState.practice = data.practice || {};
-      appState.sim = data.sim || appState.sim;
-    }
-  } catch (_) {}
+function cacheEls(){
+  ['splashScreen','onboardingBackdrop','onboardingModal','closeOnboarding','startLearning','sidebar','lessonNav','completedLessons','completedTests','progressFill','progressPercent','resetProgress','installApp','openCompletion','completionHint','content','pageTitle','pageSubtitle','offlineBadge','lessonChip','showOnboarding','continueCourse','jumpToTest','lessonPanel','widgetPanel','practicePanel','testPanel','completionPanel','finalLessons','finalTests','finalScore','certificateStatus','certificateNameInput','certificateName','certificateDate','downloadCertificate','scrollToLessons','lessonSheet','lessonSheetBackdrop','lessonSheetList','closeLessonSheet'].forEach(id=>els[id]=document.getElementById(id));
 }
-function safeSave() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(appState)); } catch (_) {}
-}
+function safeLoad(){ try{ const data=JSON.parse(localStorage.getItem(STORAGE_KEY)); if(data) Object.assign(appState, data); }catch(_){} }
+function safeSave(){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(appState)); }catch(_){} }
+function formatMoney(v){ return new Intl.NumberFormat('ru-RU',{style:'currency',currency:'RUB',maximumFractionDigits:0}).format(v); }
+function formatPct(v){ return new Intl.NumberFormat('ru-RU',{minimumFractionDigits:1,maximumFractionDigits:1}).format(v)+'%'; }
+function lessonKey(){ return `lesson-${appState.activeLesson}`; }
+function isComplete(){ return appState.progress.tests.filter(Boolean).length === LESSONS.length; }
+function getToday(){ return new Intl.DateTimeFormat('ru-RU',{day:'2-digit',month:'long',year:'numeric'}).format(new Date()); }
 
-function applyTheme() {
+function applyTheme(){
   document.documentElement.setAttribute('data-theme', appState.theme);
-  els.themeToggle.innerHTML = appState.theme === 'dark'
-    ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-    : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  if(els.showOnboarding) document.querySelectorAll('[data-theme-toggle]').forEach(btn=>btn.textContent = appState.theme === 'dark' ? '☀' : '☾');
+}
+function setActiveBottom(action){ document.querySelectorAll('[data-mobile-action]').forEach(b=>b.classList.toggle('active', b.dataset.mobileAction===action)); }
+function scrollToTarget(target, behavior='smooth'){
+  const el = typeof target === 'string' ? document.querySelector(target) : target;
+  if(!el) return;
+  const offset = window.innerWidth <= 920 ? 72 : 16;
+  const rect = el.getBoundingClientRect();
+  const top = window.scrollY + rect.top - offset;
+  window.scrollTo({top: Math.max(0, top), behavior});
+  if(els.content && els.content.scrollHeight > els.content.clientHeight) els.content.scrollTo({top: Math.max(0, el.offsetTop - offset), behavior});
+}
+function scrollMainToTop(behavior = window.innerWidth <= 920 ? 'auto':'smooth'){
+  requestAnimationFrame(()=>scrollToTarget('#courseTop', behavior));
 }
 
-function formatMoney(v){ return new Intl.NumberFormat('ru-RU', {style:'currency', currency:'RUB', maximumFractionDigits:0}).format(v); }
-function formatPct(v){ return new Intl.NumberFormat('ru-RU',{minimumFractionDigits:1,maximumFractionDigits:1}).format(v) + '%'; }
-function getLessonKey(i){ return `lesson-${i}`; }
-
-function renderNav() {
-  els.nav.innerHTML = LESSONS.map((lesson, idx)=>`
-    <button class="lesson-link ${idx===appState.activeLesson?'active':''}" data-lesson="${idx}">
-      <span class="lesson-index">${lesson.id}</span>
-      <span><strong>${lesson.title}</strong><span>${lesson.goal}</span></span>
-    </button>`).join('');
+function renderSidebar(){
+  els.lessonNav.innerHTML = LESSONS.map((lesson, idx)=>lessonNavButton(lesson, idx)).join('');
+  els.lessonSheetList.innerHTML = LESSONS.map((lesson, idx)=>lessonNavButton(lesson, idx, true)).join('');
+  document.querySelectorAll('[data-lesson]').forEach(btn=>btn.addEventListener('click',()=>{
+    setLesson(+btn.dataset.lesson);
+    closeLessonSheet();
+  }));
 }
-
-function updateProgress() {
+function lessonNavButton(lesson, idx, compact=false){
+  const done = appState.progress.tests[idx] ? 'done' : appState.progress.lessons[idx] ? 'started' : '';
+  return `<button class="lesson-link ${idx===appState.activeLesson?'active':''} ${done}" data-lesson="${idx}">
+    <span class="lesson-index">${lesson.id}</span>
+    <span><strong>${lesson.title}</strong>${compact ? `<em>${lesson.category}</em>` : `<small>${lesson.goal}</small>`}</span>
+  </button>`;
+}
+function updateProgress(){
   const lessonsDone = appState.progress.lessons.filter(Boolean).length;
   const testsDone = appState.progress.tests.filter(Boolean).length;
   const percent = Math.round(((lessonsDone + testsDone) / 12) * 100);
-  els.progressFill.style.width = `${percent}%`;
   els.completedLessons.textContent = lessonsDone;
   els.completedTests.textContent = testsDone;
   els.progressPercent.textContent = `${percent}%`;
+  els.progressFill.style.width = `${percent}%`;
+  els.openCompletion.disabled = !isComplete();
+  els.completionHint.textContent = isComplete() ? 'Курс завершен. Можно открыть итог и скачать сертификат.' : `Финальный экран откроется после всех тестов. Сейчас завершено ${testsDone}/6.`;
+  updateCompletionPanel(false);
 }
-
-function isCourseComplete() {
-  return appState.progress.tests.filter(Boolean).length === LESSONS.length;
-}
-
-function setActiveLesson(index, shouldScroll = true) {
-  appState.activeLesson = Math.max(0, Math.min(LESSONS.length - 1, index));
+function setLesson(index, shouldScroll=true){
+  appState.activeLesson = Math.max(0, Math.min(LESSONS.length-1, index));
   renderLesson();
-  if (shouldScroll) requestAnimationFrame(() => scrollMainToTop());
+  if(shouldScroll) scrollMainToTop(window.innerWidth <= 920 ? 'auto':'smooth');
 }
 
-function renderLesson() {
+function renderLesson(){
   const lesson = LESSONS[appState.activeLesson];
   appState.progress.lessons[appState.activeLesson] = true;
   els.pageTitle.textContent = lesson.title;
   els.pageSubtitle.textContent = lesson.goal;
   els.lessonChip.textContent = `Урок ${lesson.id} из 6`;
-  renderNav();
-  els.lessonPanel.innerHTML = `
-    <h3>${lesson.title}</h3>
-    <p class="panel-intro">${lesson.goal}</p>
-    <div class="key-tags">${lesson.concepts.map(c=>`<span class="tag">${c}</span>`).join('')}</div>
-    <div class="lesson-sections" style="margin-top:var(--space-5)">${lesson.sections.map(s=>`<p>${s}</p>`).join('')}</div>
-    <div class="tip" style="margin-top:var(--space-5)"><strong>${lesson.tipTitle}</strong><p>${lesson.tipText}</p></div>
-    ${renderPracticeBlock(lesson)}
-  `;
-  bindPracticeBlock(lesson);
+  renderSidebar();
+  renderLessonPanel(lesson);
   renderWidget(lesson.widget);
-  renderTest(lesson.tests);
-  renderLessonNavigation();
+  renderPractice(lesson);
+  renderTest(lesson);
+  renderLessonActions();
   updateProgress();
   safeSave();
 }
-
-function renderPracticeBlock(lesson) {
-  const tasks = PRACTICES[lesson.id] || PRACTICES.default;
-  return `
-    <section class="practice-card" aria-labelledby="practice-title-${lesson.id}">
-      <div class="eyebrow">Практическое задание</div>
-      <h4 id="practice-title-${lesson.id}">${tasks.title}</h4>
-      <p>${tasks.text}</p>
-      <div class="practice-list">
-        ${tasks.checks.map((check, idx) => {
-          const checked = appState.practice?.[lesson.id]?.includes(idx) ? 'checked' : '';
-          return `<label class="practice-check"><input type="checkbox" data-practice="${lesson.id}" data-check="${idx}" ${checked}> <span>${check}</span></label>`;
-        }).join('')}
-      </div>
-      <div class="practice-status" id="practiceStatus-${lesson.id}"></div>
-    </section>
-  `;
+function renderLessonPanel(lesson){
+  els.lessonPanel.innerHTML = `<div class="lesson-head">
+    <div><div class="eyebrow">${lesson.category}</div><h3>${lesson.icon} ${lesson.title}</h3><p class="panel-intro">${lesson.goal}</p></div>
+    <div class="lesson-illustration">${lessonIllustration(lesson.visual)}</div>
+  </div>
+  <div class="key-tags">${lesson.concepts.map(c=>`<span class="tag">${c}</span>`).join('')}</div>
+  <div class="lesson-sections">${lesson.sections.map((s,i)=>`<p><strong>${i+1}.</strong> ${s}</p>`).join('')}</div>
+  <div class="tip"><strong>${lesson.tipTitle}</strong><p>${lesson.tipText}</p></div>`;
 }
-
-function bindPracticeBlock(lesson) {
-  const updateStatus = () => {
-    const tasks = PRACTICES[lesson.id] || PRACTICES.default;
-    const done = appState.practice?.[lesson.id]?.length || 0;
-    const status = document.getElementById(`practiceStatus-${lesson.id}`);
-    if (status) status.textContent = done === tasks.checks.length
-      ? 'Задание выполнено. Отлично — можно переходить к тесту.'
-      : `Выполнено пунктов: ${done} из ${tasks.checks.length}.`;
+function lessonIllustration(type){
+  const paths = {
+    goal:'<circle cx="64" cy="64" r="48"/><path d="M64 32v32l24 14"/>',
+    stocks:'<path d="M20 92h88"/><path d="M28 82l22-22 18 14 34-38"/><path d="M88 36h14v16"/>',
+    bonds:'<rect x="22" y="34" width="84" height="60" rx="12"/><path d="M36 54h52M36 72h34"/>',
+    funds:'<path d="M64 20v44l38 22"/><path d="M64 64L26 86"/><circle cx="64" cy="64" r="44"/>',
+    risk:'<path d="M64 22v84"/><path d="M30 52h68"/><path d="M40 52l-18 34h36L40 52zM88 52L70 86h36L88 52z"/>',
+    tax:'<rect x="30" y="20" width="68" height="88" rx="10"/><path d="M44 44h40M44 64h28M44 84h18"/>'
   };
-
-  els.lessonPanel.querySelectorAll('[data-practice]').forEach(input => {
-    input.addEventListener('change', () => {
-      const lessonId = String(input.dataset.practice);
-      const checkId = +input.dataset.check;
-      appState.practice[lessonId] = appState.practice[lessonId] || [];
-      if (input.checked && !appState.practice[lessonId].includes(checkId)) appState.practice[lessonId].push(checkId);
-      if (!input.checked) appState.practice[lessonId] = appState.practice[lessonId].filter(x => x !== checkId);
-      safeSave();
-      updateStatus();
-    });
-  });
-
-  updateStatus();
+  return `<svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">${paths[type]||paths.goal}</g></svg>`;
+}
+function renderPractice(lesson){
+  const tasks = PRACTICES[lesson.id];
+  const done = appState.practice[lesson.id] || [];
+  els.practicePanel.innerHTML = `<div class="panel-header-line"><div><div class="eyebrow">Практика</div><h3>${tasks.title}</h3></div><span class="chip">${done.length}/${tasks.checks.length}</span></div><p class="panel-intro">${tasks.text}</p><div class="practice-list">${tasks.checks.map((check,idx)=>`<label class="practice-check"><input type="checkbox" data-practice="${lesson.id}" data-check="${idx}" ${done.includes(idx)?'checked':''}> <span>${check}</span></label>`).join('')}</div><div class="practice-status" id="practiceStatus"></div>`;
+  els.practicePanel.querySelectorAll('[data-practice]').forEach(input=>input.addEventListener('change',()=>{
+    const lid = +input.dataset.practice, cid = +input.dataset.check;
+    appState.practice[lid] = appState.practice[lid] || [];
+    if(input.checked && !appState.practice[lid].includes(cid)) appState.practice[lid].push(cid);
+    if(!input.checked) appState.practice[lid] = appState.practice[lid].filter(x=>x!==cid);
+    safeSave(); renderPractice(lesson);
+  }));
+  const status = els.practicePanel.querySelector('#practiceStatus');
+  status.textContent = done.length === tasks.checks.length ? 'Готово. Практика закреплена — переходите к тесту.' : `Выполнено пунктов: ${done.length} из ${tasks.checks.length}.`;
 }
 
-function scrollMainToTop() {
-  const content = document.querySelector('.content');
-  const main = document.getElementById('main');
-  const behavior = window.innerWidth <= 920 ? 'auto' : 'smooth';
-  if (content) content.scrollTo({ top: 0, left: 0, behavior });
-  if (document.scrollingElement) document.scrollingElement.scrollTo({ top: 0, left: 0, behavior });
-  if (main) main.scrollIntoView({ behavior, block: 'start' });
-}
-
-function renderWidget(type) {
-  const widgets = {
-    'capital-calc': `<div class="widget"><h4>Калькулятор сложного процента</h4><p>Оцените, как стартовый капитал и регулярные пополнения влияют на итоговую сумму.</p><div class="form-row"><div class="field"><label for="cc-start">Стартовый капитал, ₽</label><input id="cc-start" type="number" value="100000"></div><div class="field"><label for="cc-month">Ежемесячное пополнение, ₽</label><input id="cc-month" type="number" value="15000"></div><div class="field"><label for="cc-rate">Средняя доходность, % годовых</label><input id="cc-rate" type="number" value="12" step="0.1"></div><div class="field"><label for="cc-years">Горизонт, лет</label><input id="cc-years" type="number" value="5"></div></div><div class="btn-row"><button class="btn btn-primary" id="calcCapital">Рассчитать</button></div><div class="result-box" id="capitalResult"></div></div>`,
-    'stock-simulator': `<div class="widget"><h4>Тренажер торговли акциями</h4><p>Учебный симулятор показывает, как меняется цена, средняя цена покупки и результат позиции.</p><div class="simulator-top"><div><div class="price" id="stockPrice"></div><div id="stockChange" class="price-change up"></div></div><div class="btn-row"><button class="btn btn-secondary" id="tickBtn">Обновить цену</button><button class="btn btn-primary" id="buyBtn">Купить 10 шт.</button><button class="btn btn-ghost" id="sellBtn">Продать 10 шт.</button></div></div><div class="chart"><svg viewBox="0 0 600 180" preserveAspectRatio="none"><path id="stockArea" d=""/><path id="stockLine" d=""/></svg></div><div class="sim-balance"><div class="sim-kpi"><div class="label">Кэш</div><div class="value" id="cashValue"></div></div><div class="sim-kpi"><div class="label">Акции</div><div class="value" id="sharesValue"></div></div><div class="sim-kpi"><div class="label">Результат</div><div class="value" id="pnlValue"></div></div></div></div>`,
-    'bond-calculator': `<div class="widget"><h4>Калькулятор доходности облигации</h4><p>Сравните купон и приблизительную доходность к погашению с учетом цены покупки.</p><div class="form-row"><div class="field"><label for="bond-price">Цена покупки, % от номинала</label><input id="bond-price" type="number" value="97" step="0.1"></div><div class="field"><label for="bond-coupon">Купон, % годовых</label><input id="bond-coupon" type="number" value="11.5" step="0.1"></div><div class="field"><label for="bond-years">Лет до погашения</label><input id="bond-years" type="number" value="3"></div><div class="field"><label for="bond-face">Номинал, ₽</label><input id="bond-face" type="number" value="1000"></div></div><div class="btn-row"><button class="btn btn-primary" id="calcBond">Рассчитать</button></div><div class="result-box" id="bondResult"></div></div>`,
-    'etf-pie': `<div class="widget"><h4>Конструктор ETF-портфеля</h4><p>Измените доли активов и проверьте, что портфель в сумме дает 100%.</p><div class="form-row"><div class="field"><label for="etf-stock">Акции, %</label><input id="etf-stock" type="range" min="0" max="100" value="50"></div><div class="field"><label for="etf-bond">Облигации, %</label><input id="etf-bond" type="range" min="0" max="100" value="30"></div><div class="field"><label for="etf-gold">Золото, %</label><input id="etf-gold" type="range" min="0" max="100" value="10"></div><div class="field"><label for="etf-cash">Деньги, %</label><input id="etf-cash" type="range" min="0" max="100" value="10"></div></div><div class="portfolio-bars" id="portfolioBars"></div><div class="result-box" id="etfResult"></div></div>`,
-    'risk-profiler': `<div class="widget"><h4>Тест на риск-профиль</h4><p>Ответьте на три вопроса и получите учебную подсказку по структуре портфеля.</p><div class="field"><label for="risk-horizon">Ваш горизонт инвестирования</label><select id="risk-horizon"><option value="1">До 2 лет</option><option value="2">2–5 лет</option><option value="3">Более 5 лет</option></select></div><div class="field"><label for="risk-drop">Как вы реагируете на просадку -15%?</label><select id="risk-drop"><option value="1">Стану сокращать риск</option><option value="2">Ничего не меняю</option><option value="3">Готов докупить</option></select></div><div class="field"><label for="risk-goal">Что важнее?</label><select id="risk-goal"><option value="1">Стабильность</option><option value="2">Баланс</option><option value="3">Рост капитала</option></select></div><div class="btn-row"><button class="btn btn-primary" id="calcRisk">Определить профиль</button></div><div class="result-box" id="riskResult"></div></div>`,
-    'iis-calculator': `<div class="widget"><h4>Калькулятор ИИС-3 и вклада</h4><p>Сравните налоговый вычет по ИИС-3 и предполагаемый доход по вкладу.</p><div class="form-row"><div class="field"><label for="iis-amount">Годовое пополнение, ₽</label><input id="iis-amount" type="number" value="400000"></div><div class="field"><label for="iis-tax">Ставка НДФЛ, %</label><input id="iis-tax" type="number" value="22"></div><div class="field"><label for="iis-deposit">Ставка по вкладу, %</label><input id="iis-deposit" type="number" value="15" step="0.1"></div><div class="field"><label for="iis-years">Срок, лет</label><input id="iis-years" type="number" value="5"></div></div><div class="btn-row"><button class="btn btn-primary" id="calcIis">Сравнить</button></div><div class="result-box" id="iisResult"></div></div>`
+function renderWidget(type){
+  const map = {
+    'capital-calc': capitalWidget,
+    'stock-simulator': stockWidget,
+    'bond-calculator': bondWidget,
+    'etf-pie': etfWidget,
+    'risk-profiler': riskWidget,
+    'iis-calculator': iisWidget
   };
-  els.widgetPanel.innerHTML = `<h3>Практический блок</h3><p class="panel-intro">Каждый урок закрепляется интерактивным упражнением.</p><div class="widget-grid">${widgets[type]}</div>`;
-  bindWidget(type);
+  els.widgetPanel.innerHTML = '';
+  els.widgetPanel.appendChild((map[type]||capitalWidget)());
+}
+function widgetShell(title, html){
+  const wrap = document.createElement('div');
+  wrap.className = 'widget-inner';
+  wrap.innerHTML = `<div class="widget-title"><span>Интерактивный блок</span><h4>${title}</h4></div>${html}`;
+  return wrap;
+}
+function capitalWidget(){
+  const el = widgetShell('Калькулятор сложного процента', `<div class="widget-grid"><label class="field"><span>Стартовая сумма</span><input id="cc-start" type="number" value="30000"></label><label class="field"><span>Ежемесячно</span><input id="cc-month" type="number" value="5000"></label><label class="field"><span>Доходность, % годовых</span><input id="cc-rate" type="number" value="15"></label><label class="field"><span>Срок, лет</span><input id="cc-years" type="number" value="5"></label></div><div class="result-box" id="capitalResult"></div>`);
+  const calc=()=>{ const start=+el.querySelector('#cc-start').value||0, month=+el.querySelector('#cc-month').value||0, rate=(+el.querySelector('#cc-rate').value||0)/100/12, years=+el.querySelector('#cc-years').value||0; let total=start; for(let i=0;i<years*12;i++) total=(total+month)*(1+rate); const invested=start+month*years*12; el.querySelector('#capitalResult').innerHTML=`<strong>${formatMoney(total)}</strong><span>Вложено: ${formatMoney(invested)} · результат: ${formatMoney(total-invested)}</span>`; };
+  el.querySelectorAll('input').forEach(i=>i.addEventListener('input',calc)); calc(); return el;
+}
+function stockWidget(){
+  const el = widgetShell('Тренажер покупки акций', `<div class="simulator-top"><div><span class="muted">Учебная цена акции</span><div class="price" id="stockPrice"></div></div><span id="stockChange" class="price-change up">0%</span></div><div class="chart" id="stockChart"></div><div class="sim-balance"><div class="sim-kpi"><span>Деньги</span><b id="cashValue"></b></div><div class="sim-kpi"><span>Акции</span><b id="sharesValue"></b></div><div class="sim-kpi"><span>Портфель</span><b id="portfolioValue"></b></div></div><div class="btn-row"><button class="btn btn-primary" id="buyBtn">Купить 10</button><button class="btn btn-secondary" id="sellBtn">Продать 10</button><button class="btn btn-ghost" id="tickBtn">Следующий день</button></div>`);
+  const renderChart=()=>{ const data=appState.sim.history, min=Math.min(...data), max=Math.max(...data), range=max-min||1; const pts=data.map((v,i)=>`${(i/(data.length-1))*100},${100-((v-min)/range)*80-10}`).join(' '); el.querySelector('#stockChart').innerHTML=`<svg viewBox="0 0 100 100" preserveAspectRatio="none"><polyline points="${pts}" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>`; };
+  const upd=()=>{ const s=appState.sim; el.querySelector('#stockPrice').textContent=s.price.toFixed(1)+' ₽'; el.querySelector('#cashValue').textContent=formatMoney(s.cash); el.querySelector('#sharesValue').textContent=s.shares+' шт.'; el.querySelector('#portfolioValue').textContent=formatMoney(s.cash+s.shares*s.price); renderChart(); };
+  el.querySelector('#tickBtn').onclick=()=>{ const old=appState.sim.price; appState.sim.price=Math.max(60, +(old+(Math.random()*8-3.5)).toFixed(1)); appState.sim.history.push(appState.sim.price); if(appState.sim.history.length>18) appState.sim.history.shift(); const pct=(appState.sim.price-old)/old*100; const change=el.querySelector('#stockChange'); change.textContent=(pct>=0?'+':'')+pct.toFixed(1)+'%'; change.className='price-change '+(pct>=0?'up':'down'); upd(); safeSave(); };
+  el.querySelector('#buyBtn').onclick=()=>{ const cost=10*appState.sim.price; if(appState.sim.cash>=cost){ appState.sim.cash-=cost; appState.sim.shares+=10; } upd(); safeSave(); };
+  el.querySelector('#sellBtn').onclick=()=>{ const qty=Math.min(10,appState.sim.shares); appState.sim.shares-=qty; appState.sim.cash+=qty*appState.sim.price; upd(); safeSave(); };
+  upd(); return el;
+}
+function bondWidget(){
+  const el=widgetShell('Калькулятор доходности облигации', `<div class="widget-grid"><label class="field"><span>Цена, % от номинала</span><input id="bond-price" type="number" value="96"></label><label class="field"><span>Купон, % годовых</span><input id="bond-coupon" type="number" value="13"></label><label class="field"><span>Срок, лет</span><input id="bond-years" type="number" value="3"></label><label class="field"><span>Номинал, ₽</span><input id="bond-face" type="number" value="1000"></label></div><div class="result-box" id="bondResult"></div>`);
+  const calc=()=>{ const pricePct=+el.querySelector('#bond-price').value||0, couponPct=+el.querySelector('#bond-coupon').value||0, years=+el.querySelector('#bond-years').value||1, face=+el.querySelector('#bond-face').value||1000; const price=face*pricePct/100, coupon=face*couponPct/100; const ytm=((coupon+(face-price)/years)/((face+price)/2))*100; el.querySelector('#bondResult').innerHTML=`<strong>${formatPct(ytm)}</strong><span>Ориентир доходности к погашению. Купон: ${formatMoney(coupon)}, цена: ${formatMoney(price)}.</span>`; };
+  el.querySelectorAll('input').forEach(i=>i.addEventListener('input',calc)); calc(); return el;
+}
+function etfWidget(){
+  const el=widgetShell('Конструктор портфеля из фондов', `<div class="widget-grid"><label class="field"><span>Акции, %</span><input id="etf-stock" type="range" min="0" max="100" value="50"></label><label class="field"><span>Облигации, %</span><input id="etf-bond" type="range" min="0" max="100" value="35"></label><label class="field"><span>Денежный рынок, %</span><input id="etf-cash" type="range" min="0" max="100" value="15"></label></div><div class="allocation" id="allocation"></div><div class="result-box" id="etfResult"></div>`);
+  const sync=()=>{ const vals=['stock','bond','cash'].map(x=>+el.querySelector('#etf-'+x).value); const total=vals.reduce((a,b)=>a+b,0); el.querySelector('#allocation').innerHTML=vals.map((v,i)=>`<span style="width:${total?v/total*100:0}%"></span>`).join(''); el.querySelector('#etfResult').innerHTML=`<strong>${total===100?'Портфель собран корректно':'Проверьте сумму долей'}</strong><span>Сумма долей: ${total}%. Ориентир: привести сумму к 100%.</span>`; };
+  el.querySelectorAll('input').forEach(i=>i.addEventListener('input',sync)); sync(); return el;
+}
+function riskWidget(){
+  const el=widgetShell('Мини-тест риск-профиля', `<div class="widget-grid"><label class="field"><span>Горизонт</span><select id="risk-h"><option value="1">До 1 года</option><option value="2">1–3 года</option><option value="3">Более 3 лет</option></select></label><label class="field"><span>Готовность к просадке</span><select id="risk-d"><option value="1">До 5%</option><option value="2">До 15%</option><option value="3">Более 15%</option></select></label><label class="field"><span>Цель</span><select id="risk-g"><option value="1">Сохранить капитал</option><option value="2">Умеренный рост</option><option value="3">Активный рост</option></select></label></div><div class="result-box" id="riskResult"></div>`);
+  const calc=()=>{ const score=['h','d','g'].reduce((a,x)=>a+(+el.querySelector('#risk-'+x).value),0); let res='Консервативный', text='Больше внимания стабильности и ликвидности.'; if(score>=6){res='Умеренный'; text='Баланс акций, облигаций и денежных инструментов.';} if(score>=8){res='Агрессивный'; text='Выше доля акций и готовность к заметным просадкам.';} el.querySelector('#riskResult').innerHTML=`<strong>${res}</strong><span>${text}</span>`; };
+  el.querySelectorAll('select').forEach(i=>i.addEventListener('change',calc)); calc(); return el;
+}
+function iisWidget(){
+  const el=widgetShell('Калькулятор вычета по ИИС-3', `<div class="widget-grid"><label class="field"><span>Взнос за год, ₽</span><input id="iis-amount" type="number" value="400000"></label><label class="field"><span>Ставка НДФЛ, %</span><select id="iis-tax"><option>13</option><option>15</option><option>18</option><option>20</option><option selected>22</option></select></label><label class="field"><span>Срок, лет</span><input id="iis-years" type="number" value="5"></label></div><div class="result-box" id="iisResult"></div>`);
+  const calc=()=>{ const amount=+el.querySelector('#iis-amount').value||0, tax=(+el.querySelector('#iis-tax').value||0)/100, years=+el.querySelector('#iis-years').value||1; const base=Math.min(amount,400000), deduction=base*tax; el.querySelector('#iisResult').innerHTML=`<strong>${formatMoney(deduction)}</strong><span>Потенциальный возврат за год. База: ${formatMoney(base)}. Для сохранения льгот важно выдержать минимальный срок владения.</span>`; };
+  el.querySelectorAll('input,select').forEach(i=>i.addEventListener('input',calc)); calc(); return el;
 }
 
-function renderStockChart(){
-  const data = appState.sim.history;
-  const max = Math.max(...data), min = Math.min(...data);
-  const toY = v => 150 - ((v - min) / (max - min || 1)) * 110;
-  const toX = i => 24 + i * ((600 - 48) / (data.length - 1));
-  const pts = data.map((v,i)=>`${toX(i)},${toY(v)}`);
-  document.getElementById('stockLine').setAttribute('d', 'M ' + pts.join(' L '));
-  document.getElementById('stockLine').setAttribute('fill', 'none');
-  document.getElementById('stockLine').setAttribute('stroke', 'var(--color-primary)');
-  document.getElementById('stockLine').setAttribute('stroke-width', '4');
-  document.getElementById('stockLine').setAttribute('stroke-linecap', 'round');
-  document.getElementById('stockArea').setAttribute('d', 'M ' + pts.join(' L ') + ` L ${toX(data.length-1)},170 L 24,170 Z`);
-  document.getElementById('stockArea').setAttribute('fill', 'color-mix(in srgb, var(--color-primary) 16%, transparent)');
-}
-function updateStockKpis(){
-  const marketValue = appState.sim.shares * appState.sim.price;
-  const pnl = marketValue - appState.sim.shares * appState.sim.avgPrice;
-  document.getElementById('stockPrice').textContent = new Intl.NumberFormat('ru-RU',{minimumFractionDigits:1,maximumFractionDigits:1}).format(appState.sim.price) + ' ₽';
-  document.getElementById('stockChange').textContent = 'Учебная котировка';
-  document.getElementById('cashValue').textContent = formatMoney(appState.sim.cash);
-  document.getElementById('sharesValue').textContent = appState.sim.shares + ' шт.';
-  const pnlEl = document.getElementById('pnlValue');
-  pnlEl.textContent = (pnl >= 0 ? '+' : '') + formatMoney(pnl);
-  pnlEl.style.color = pnl >= 0 ? 'var(--color-success)' : 'var(--color-error)';
-}
-
-function bindWidget(type){
-  if(type === 'capital-calc'){
-    const calc = ()=>{
-      const start = +document.getElementById('cc-start').value || 0;
-      const month = +document.getElementById('cc-month').value || 0;
-      const rate = (+document.getElementById('cc-rate').value || 0) / 100 / 12;
-      const years = +document.getElementById('cc-years').value || 0;
-      let total = start;
-      for(let i=0;i<years*12;i++) total = (total + month) * (1 + rate);
-      const invested = start + month*years*12;
-      document.getElementById('capitalResult').innerHTML = `<strong>Итоговый капитал: ${formatMoney(total)}</strong>Вложено: ${formatMoney(invested)}<br>Потенциальный инвестиционный результат: ${formatMoney(total - invested)}`;
-    }; document.getElementById('calcCapital').onclick = calc; calc();
-  }
-  if(type === 'stock-simulator'){
-    const tick = ()=>{
-      const old = appState.sim.price;
-      appState.sim.price = Math.max(60, +(appState.sim.price + (Math.random()*6 - 3)).toFixed(1));
-      appState.sim.history.push(appState.sim.price);
-      if(appState.sim.history.length > 18) appState.sim.history.shift();
-      const pct = ((appState.sim.price - old)/old)*100;
-      const changeEl = document.getElementById('stockChange');
-      changeEl.textContent = `${pct >= 0 ? '+' : ''}${new Intl.NumberFormat('ru-RU',{minimumFractionDigits:1,maximumFractionDigits:1}).format(pct)}% за тик`;
-      changeEl.className = `price-change ${pct >= 0 ? 'up':'down'}`;
-      renderStockChart(); updateStockKpis(); safeSave();
-    };
-    document.getElementById('tickBtn').onclick = tick;
-    document.getElementById('buyBtn').onclick = ()=>{
-      const qty = 10, cost = qty * appState.sim.price;
-      if(appState.sim.cash < cost) return;
-      const totalCost = appState.sim.avgPrice * appState.sim.shares + cost;
-      appState.sim.shares += qty;
-      appState.sim.avgPrice = totalCost / appState.sim.shares;
-      appState.sim.cash -= cost;
-      updateStockKpis(); safeSave();
-    };
-    document.getElementById('sellBtn').onclick = ()=>{
-      const qty = Math.min(10, appState.sim.shares);
-      if(qty <= 0) return;
-      appState.sim.shares -= qty;
-      appState.sim.cash += qty * appState.sim.price;
-      if(appState.sim.shares === 0) appState.sim.avgPrice = 0;
-      updateStockKpis(); safeSave();
-    };
-    renderStockChart(); updateStockKpis();
-  }
-  if(type === 'bond-calculator'){
-    const calc = ()=>{
-      const pricePct = +document.getElementById('bond-price').value || 0;
-      const couponPct = +document.getElementById('bond-coupon').value || 0;
-      const years = +document.getElementById('bond-years').value || 1;
-      const face = +document.getElementById('bond-face').value || 1000;
-      const price = face * pricePct / 100;
-      const coupon = face * couponPct / 100;
-      const ytm = ((coupon + ((face - price)/years)) / ((face + price)/2)) * 100;
-      document.getElementById('bondResult').innerHTML = `<strong>Ориентир по доходности к погашению: ${formatPct(ytm)}</strong>Годовой купон: ${formatMoney(coupon)}<br>Цена покупки: ${formatMoney(price)}<br>Если бумага куплена ниже номинала, итоговая доходность выше купона.`;
-    }; document.getElementById('calcBond').onclick = calc; calc();
-  }
-  if(type === 'etf-pie'){
-    const ids = ['etf-stock','etf-bond','etf-gold','etf-cash'];
-    const labels = ['Акции','Облигации','Золото','Деньги'];
-    const colors = ['var(--color-primary)','var(--color-blue)','var(--color-gold)','var(--color-text-muted)'];
-    const sync = ()=>{
-      const vals = ids.map(id=> +document.getElementById(id).value);
-      const total = vals.reduce((a,b)=>a+b,0);
-      document.getElementById('portfolioBars').innerHTML = vals.map((v,i)=>`<div class="portfolio-bar"><div class="meta"><span>${labels[i]}</span><strong>${v}%</strong></div><div class="bar"><span style="width:${v}%;background:${colors[i]}"></span></div></div>`).join('');
-      document.getElementById('etfResult').innerHTML = `<strong>${total === 100 ? 'Портфель сбалансирован' : 'Нужна корректировка'}</strong>Сумма долей: ${total}%`;
-    };
-    ids.forEach(id=> document.getElementById(id).addEventListener('input', sync)); sync();
-  }
-  if(type === 'risk-profiler'){
-    document.getElementById('calcRisk').onclick = ()=>{
-      const score = ['risk-horizon','risk-drop','risk-goal'].reduce((acc,id)=> acc + (+document.getElementById(id).value || 0), 0);
-      let title = 'Консервативный профиль', text = 'Ориентир: выше доля облигаций и денег, ниже доля акций.';
-      if(score >= 6 && score <= 7) { title = 'Умеренный профиль'; text = 'Ориентир: сбалансированное сочетание акций и облигаций, например учебный диапазон около 60/40.'; }
-      if(score >= 8) { title = 'Агрессивный профиль'; text = 'Ориентир: выше доля акций и длинный горизонт. Важно быть готовым к заметным просадкам.'; }
-      document.getElementById('riskResult').innerHTML = `<strong>${title}</strong>${text}`;
-    };
-  }
-  if(type === 'iis-calculator'){
-    const calc = ()=>{
-      const amount = +document.getElementById('iis-amount').value || 0;
-      const tax = (+document.getElementById('iis-tax').value || 0) / 100;
-      const deposit = (+document.getElementById('iis-deposit').value || 0) / 100;
-      const years = +document.getElementById('iis-years').value || 1;
-      const deductionBase = Math.min(amount, 400000);
-      const deduction = deductionBase * tax;
-      const depositIncome = amount * deposit * years;
-      document.getElementById('iisResult').innerHTML = `<strong>Потенциальный вычет по ИИС-3: ${formatMoney(deduction)}</strong>База для вычета: ${formatMoney(deductionBase)}<br>Доход по вкладу за ${years} лет без капитализации: ${formatMoney(depositIncome)}<br>Для сохранения льгот по ИИС-3 важно выдержать минимальный срок владения.`;
-    }; document.getElementById('calcIis').onclick = calc; calc();
-  }
-}
-
-function renderTest(tests){
-  const key = getLessonKey(appState.activeLesson);
+function renderTest(lesson){
+  const key = lessonKey();
   const answered = appState.answered[key] || {};
+  const tests = lesson.tests;
   let score = appState.progress.scores[appState.activeLesson] || 0;
-  els.testPanel.innerHTML = `<h3>Проверка знаний</h3><p class="panel-intro">После каждого ответа показывается пояснение.</p><div class="test-list">${tests.map((test, qi)=>`
-    <div class="test-card" data-test="${qi}"><div class="test-q">${qi+1}. ${test.q}</div><div class="answers">${test.answers.map((ans, ai)=>`<button class="answer-btn" data-q="${qi}" data-a="${ai}">${ans}</button>`).join('')}</div><div class="answer-expl hidden" id="expl-${qi}"></div></div>`).join('')}</div><div class="test-score" id="testScore">Правильных ответов: ${score} из ${tests.length}</div>`;
-
-  Object.entries(answered).forEach(([qIdx, chosen])=> applyAnswerState(+qIdx, chosen, tests));
-
-  els.testPanel.querySelectorAll('.answer-btn').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const q = +btn.dataset.q, a = +btn.dataset.a;
-      if ((appState.answered[key] || {})[q] !== undefined) return;
-      appState.answered[key] = { ...(appState.answered[key] || {}), [q]: a };
-      applyAnswerState(q, a, tests);
-      const answersCount = Object.keys(appState.answered[key]).length;
-      score = Object.entries(appState.answered[key]).reduce((acc,[idx,chosen])=> acc + (tests[idx].correct === chosen ? 1 : 0), 0);
-      appState.progress.scores[appState.activeLesson] = score;
-      document.getElementById('testScore').textContent = `Правильных ответов: ${score} из ${tests.length}`;
-      if (answersCount === tests.length) appState.progress.tests[appState.activeLesson] = true;
-      updateProgress(); safeSave(); renderLessonNavigation();
-    });
-  });
+  els.testPanel.innerHTML = `<div class="panel-header-line"><div><div class="eyebrow">Проверочный тест</div><h3>Закрепите тему</h3></div><span class="chip">${Object.keys(answered).length}/${tests.length}</span></div><p class="panel-intro">Выберите ответ — правильный вариант подсветится зеленым, ошибка красным, а ниже появится пояснение.</p><div class="test-list">${tests.map((test,qi)=>`<div class="test-card" data-test="${qi}"><div class="test-q">${qi+1}. ${test.q}</div><div class="answers">${test.answers.map((ans,ai)=>`<button class="answer-btn" data-q="${qi}" data-a="${ai}">${ans}</button>`).join('')}</div><div class="answer-expl hidden" id="expl-${qi}"></div></div>`).join('')}</div><div class="test-score" id="testScore">Правильных ответов: ${score} из ${tests.length}</div>`;
+  Object.entries(answered).forEach(([q,chosen])=>applyAnswerState(+q, chosen, tests));
+  els.testPanel.querySelectorAll('.answer-btn').forEach(btn=>btn.addEventListener('click',()=>{
+    const q=+btn.dataset.q, a=+btn.dataset.a;
+    if((appState.answered[key]||{})[q] !== undefined) return;
+    appState.answered[key] = {...(appState.answered[key]||{}), [q]:a};
+    applyAnswerState(q,a,tests);
+    score = Object.entries(appState.answered[key]).reduce((acc,[idx,chosen])=>acc+(tests[idx].correct===chosen?1:0),0);
+    appState.progress.scores[appState.activeLesson]=score;
+    els.testPanel.querySelector('#testScore').textContent=`Правильных ответов: ${score} из ${tests.length}`;
+    if(Object.keys(appState.answered[key]).length === tests.length) appState.progress.tests[appState.activeLesson]=true;
+    updateProgress(); renderSidebar(); renderLessonActions(); safeSave();
+  }));
+}
+function applyAnswerState(q, chosen, tests){
+  const card=els.testPanel.querySelector(`[data-test="${q}"]`); if(!card) return;
+  card.querySelectorAll('.answer-btn').forEach((b,idx)=>{ if(idx===tests[q].correct)b.classList.add('correct'); else if(idx===chosen)b.classList.add('wrong'); b.disabled=true; });
+  const expl=card.querySelector(`#expl-${q}`); expl.classList.remove('hidden'); expl.textContent=tests[q].expl;
+}
+function renderLessonActions(){
+  const current = appState.activeLesson, last = current === LESSONS.length - 1;
+  const html = `<div class="lesson-actions"><button class="btn btn-secondary" id="prevLesson" ${current===0?'disabled':''}>← Предыдущий урок</button><button class="btn btn-primary" id="nextLesson">${last ? 'Перейти к итогу' : 'Следующий урок →'}</button></div>`;
+  els.testPanel.insertAdjacentHTML('beforeend', html);
+  els.testPanel.querySelector('#prevLesson').onclick=()=>setLesson(current-1);
+  els.testPanel.querySelector('#nextLesson').onclick=()=>{ if(last) openCompletion(); else setLesson(current+1); };
 }
 
-
-function renderLessonNavigation() {
-  els.testPanel.querySelector('.lesson-actions')?.remove();
-  const current = appState.activeLesson;
-  const isFirst = current === 0;
-  const isLast = current === LESSONS.length - 1;
-  const complete = isCourseComplete();
-
-  const nav = document.createElement('div');
-  nav.className = 'lesson-actions';
-  nav.innerHTML = `
-    <button class="btn btn-secondary" data-prev-lesson ${isFirst ? 'disabled' : ''}>← Предыдущий урок</button>
-    <button class="btn btn-primary" data-next-lesson>${isLast ? (complete ? 'Перейти к итогу курса' : 'Вернуться к первому уроку') : 'Следующий урок →'}</button>
-  `;
-  els.testPanel.appendChild(nav);
-
-  nav.querySelector('[data-prev-lesson]')?.addEventListener('click', () => {
-    if (!isFirst) setActiveLesson(current - 1, true);
-  });
-
-  nav.querySelector('[data-next-lesson]')?.addEventListener('click', () => {
-    if (!isLast) {
-      setActiveLesson(current + 1, true);
-      return;
-    }
-    if (complete) {
-      updateCompletionPanel(true);
-      completionPanel?.scrollIntoView({behavior:'smooth', block:'start'});
-    } else {
-      setActiveLesson(0, true);
-    }
-  });
+function openLessonSheet(){ els.lessonSheetBackdrop.classList.remove('hidden'); els.lessonSheet.classList.remove('hidden'); setActiveBottom('lessons'); }
+function closeLessonSheet(){ els.lessonSheetBackdrop.classList.add('hidden'); els.lessonSheet.classList.add('hidden'); }
+function openCompletion(){
+  if(!isComplete()){ alert('Финальный сертификат откроется после прохождения всех 6 тестов.'); return; }
+  els.completionPanel.classList.remove('hidden'); updateCompletionPanel(true); scrollToTarget(els.completionPanel);
+}
+function updateCompletionPanel(visibleOnly=true){
+  const lessonsDone=appState.progress.lessons.filter(Boolean).length, testsDone=appState.progress.tests.filter(Boolean).length, total=appState.progress.scores.reduce((a,b)=>a+b,0);
+  if(els.finalLessons) els.finalLessons.textContent=`${lessonsDone}/6`;
+  if(els.finalTests) els.finalTests.textContent=`${testsDone}/6`;
+  if(els.finalScore) els.finalScore.textContent=`${total} из 18`;
+  if(els.certificateDate) els.certificateDate.textContent=getToday();
+  updateCertificateName();
+  if(!visibleOnly && !isComplete()) els.completionPanel.classList.add('hidden');
+}
+function updateCertificateName(){
+  const name=(els.certificateNameInput?.value || appState.certificateName || '').trim();
+  appState.certificateName = name;
+  if(els.certificateName) els.certificateName.textContent = name || 'ФИО участника';
+  if(els.downloadCertificate) els.downloadCertificate.disabled = !(isComplete() && name.length >= 5);
+  safeSave();
+}
+async function exportCertificate(){
+  updateCertificateName();
+  if(els.downloadCertificate.disabled) return;
+  if(document.fonts && document.fonts.ready) await document.fonts.ready;
+  if(typeof html2canvas !== 'function') { alert('Библиотека html2canvas еще загружается. Попробуйте через несколько секунд.'); return; }
+  const canvas = await html2canvas(document.getElementById('certificateCard'), { scale: 2, useCORS: true, backgroundColor: null });
+  const link=document.createElement('a');
+  link.download='akbf-academy-certificate.png';
+  link.href=canvas.toDataURL('image/png');
+  link.click();
 }
 
-function applyAnswerState(q, chosen, tests) {
-  const card = els.testPanel.querySelector(`[data-test="${q}"]`);
-  if (!card) return;
-  [...card.querySelectorAll('.answer-btn')].forEach((b, idx)=>{
-    if (idx === tests[q].correct) b.classList.add('correct');
-    else if (idx === chosen) b.classList.add('wrong');
-    b.disabled = true;
-  });
-  const expl = document.getElementById(`expl-${q}`);
-  expl.classList.remove('hidden');
-  expl.textContent = tests[q].expl;
+function updateOnline(){ els.offlineBadge.textContent = navigator.onLine ? 'Онлайн' : 'Оффлайн'; els.offlineBadge.className = 'chip ' + (navigator.onLine ? '' : 'chip-offline'); }
+function setupEvents(){
+  els.closeOnboarding.onclick=hideOnboarding;
+  els.startLearning.onclick=()=>{ hideOnboarding(); scrollMainToTop(); };
+  els.showOnboarding.onclick=showOnboarding;
+  els.onboardingBackdrop.onclick=hideOnboarding;
+  document.querySelectorAll('[data-theme-toggle]').forEach(btn=>btn.onclick=()=>{ appState.theme=appState.theme==='dark'?'light':'dark'; applyTheme(); safeSave(); });
+  els.resetProgress.onclick=()=>{ if(confirm('Сбросить прогресс курса?')){ localStorage.removeItem(STORAGE_KEY); location.reload(); } };
+  els.openCompletion.onclick=openCompletion;
+  els.continueCourse.onclick=()=>setLesson(LESSONS.findIndex((_,i)=>!appState.progress.tests[i]) >= 0 ? LESSONS.findIndex((_,i)=>!appState.progress.tests[i]) : 0);
+  els.jumpToTest.onclick=()=>scrollToTarget(els.testPanel);
+  els.certificateNameInput.addEventListener('input', updateCertificateName);
+  els.downloadCertificate.onclick=exportCertificate;
+  els.scrollToLessons.onclick=()=>scrollToTarget('#courseTop');
+  els.closeLessonSheet.onclick=closeLessonSheet;
+  els.lessonSheetBackdrop.onclick=closeLessonSheet;
+  document.querySelectorAll('[data-mobile-action]').forEach(btn=>btn.addEventListener('click',()=>{
+    const action=btn.dataset.mobileAction; setActiveBottom(action);
+    if(action==='course') scrollToTarget('#courseTop');
+    if(action==='lessons') openLessonSheet();
+    if(action==='practice') scrollToTarget(els.practicePanel);
+    if(action==='test') scrollToTarget(els.testPanel);
+    if(action==='final') openCompletion();
+  }));
+  window.addEventListener('online',updateOnline); window.addEventListener('offline',updateOnline);
+  window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; els.installApp.disabled=false; });
+  els.installApp.onclick=async()=>{ if(!deferredPrompt) return; deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt=null; els.installApp.disabled=true; };
+}
+function showOnboarding(){ els.onboardingBackdrop.classList.remove('hidden'); els.onboardingModal.classList.remove('hidden'); }
+function hideOnboarding(){ els.onboardingBackdrop.classList.add('hidden'); els.onboardingModal.classList.add('hidden'); localStorage.setItem('akbf-academy-onboarding-seen','1'); }
+function hideSplash(){ setTimeout(()=>els.splashScreen.classList.add('hidden'), 500); }
+function registerSW(){ if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{}); }
+
+function init(){
+  cacheEls(); safeLoad(); applyTheme(); setupEvents(); renderSidebar(); renderLesson(); updateOnline(); hideSplash(); registerSW();
+  if(!localStorage.getItem('akbf-academy-onboarding-seen')) setTimeout(showOnboarding, 650);
+  if(els.certificateNameInput) els.certificateNameInput.value = appState.certificateName || '';
+  updateCertificateName();
 }
 
-function registerSW() {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch(()=>{});
-  }
-}
-function setupInstall() {
-  window.addEventListener('beforeinstallprompt', (e)=>{
-    e.preventDefault();
-    deferredPrompt = e;
-    els.installBtn.disabled = false;
-  });
-  els.installBtn.addEventListener('click', async ()=>{
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    await deferredPrompt.userChoice;
-    deferredPrompt = null;
-    els.installBtn.disabled = true;
-  });
-}
-function updateOnlineStatus() {
-  els.offlineBadge.textContent = navigator.onLine ? 'Онлайн' : 'Оффлайн';
-  els.offlineBadge.className = `chip ${navigator.onLine ? '' : 'chip-offline'}`;
-}
-
-function initEvents() {
-  els.nav.addEventListener('click', (e)=>{
-    const btn = e.target.closest('[data-lesson]');
-    if(!btn) return;
-    setActiveLesson(+btn.dataset.lesson, true);
-    els.sidebar.classList.remove('open');
-  });
-  els.themeToggle.addEventListener('click', ()=>{
-    appState.theme = appState.theme === 'dark' ? 'light' : 'dark';
-    applyTheme(); safeSave();
-  });
-  els.menuToggle.addEventListener('click', ()=> els.sidebar.classList.toggle('open'));
-  document.addEventListener('click', (e)=>{
-    if(window.innerWidth > 920) return;
-    if(!els.sidebar.contains(e.target) && !els.menuToggle.contains(e.target)) els.sidebar.classList.remove('open');
-  });
-  els.resetBtn.addEventListener('click', ()=>{
-    localStorage.removeItem(STORAGE_KEY);
-    location.reload();
-  });
-  window.addEventListener('online', updateOnlineStatus);
-  window.addEventListener('offline', updateOnlineStatus);
-}
-
-function fillEmbedCode() {
-  if (!els.embedCode) return;
-  els.embedCode.textContent = `<!-- АКБФ Академия PWA с меню: вставить в Tilda, блок T123 -->\n<div id="akbf-academy-wrapper">\n  <iframe\n    id="akbf-academy-iframe"\n    src="https://abfvkutmin.github.io/akbf-academy-v3.tar/"\n    allow="clipboard-write"\n    referrerpolicy="no-referrer"\n    loading="lazy">\n  </iframe>\n</div>\n\n<style>\n  #akbf-academy-wrapper { width:100%; height:100vh; min-height:900px; overflow:hidden; background:#f4f7fb; }\n  #akbf-academy-iframe { width:100%; height:100%; border:none; outline:none; display:block; background:#f4f7fb; }\n  @media screen and (max-width:768px) {\n    #akbf-academy-wrapper { width:100vw; height:100svh; min-height:100svh; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw); }\n  }\n</style>\n\n<script>\n(function(){function adjust(){var wrapper=document.getElementById('akbf-academy-wrapper'); if(!wrapper) return; if(window.innerWidth<768){wrapper.style.width='100vw';wrapper.style.height='100svh';wrapper.style.minHeight='100svh';wrapper.style.marginLeft='calc(50% - 50vw)';wrapper.style.marginRight='calc(50% - 50vw)';} else {wrapper.style.width='100%';wrapper.style.height='100vh';wrapper.style.minHeight='900px';wrapper.style.marginLeft='0';wrapper.style.marginRight='0';}} window.addEventListener('resize',adjust); window.addEventListener('DOMContentLoaded',adjust); adjust();})();\n<\/script>`;
-}
-
-(function init(){
-  safeLoad();
-  if (!appState.theme) appState.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  applyTheme();
-  initEvents();
-  fillEmbedCode();
-  renderNav();
-  renderLesson();
-  updateProgress();
-  updateOnlineStatus();
-  setupInstall();
-  registerSW();
-})();
-
-const splash = document.getElementById('splashScreen');
-const onboardingBackdrop = document.getElementById('onboardingBackdrop');
-const onboardingModal = document.getElementById('onboardingModal');
-const closeOnboardingBtn = document.getElementById('closeOnboarding');
-const startLearningBtn = document.getElementById('startLearning');
-const showOnboardingBtn = document.getElementById('showOnboarding');
-const openCompletionBtn = document.getElementById('openCompletion');
-const completionPanel = document.getElementById('completionPanel');
-const finalLessons = document.getElementById('finalLessons');
-const finalTests = document.getElementById('finalTests');
-const finalScore = document.getElementById('finalScore');
-const certificateStatus = document.getElementById('certificateStatus');
-const downloadCertificateBtn = document.getElementById('downloadCertificate');
-const scrollToLessonsBtn = document.getElementById('scrollToLessons');
-
-function hideSplash(){ setTimeout(()=> splash && splash.classList.add('hidden'), 900); }
-function showOnboarding(){ onboardingBackdrop.classList.remove('hidden'); onboardingModal.classList.remove('hidden'); }
-function hideOnboarding(){ onboardingBackdrop.classList.add('hidden'); onboardingModal.classList.add('hidden'); }
-function updateCompletionPanel(show = false){
-  const lessonsDone = appState.progress.lessons.filter(Boolean).length;
-  const testsDone = appState.progress.tests.filter(Boolean).length;
-  const totalScore = appState.progress.scores.reduce((a,b)=>a+b,0);
-  const complete = testsDone === LESSONS.length;
-
-  finalLessons.textContent = `${lessonsDone}/6`;
-  finalTests.textContent = `${testsDone}/6`;
-  finalScore.textContent = `${totalScore} из 18`;
-  certificateStatus.textContent = complete ? 'Курс завершен' : 'В процессе';
-
-  if (els.completionHint) {
-    els.completionHint.textContent = complete
-      ? 'Все тесты пройдены. Можно открыть итоговый экран и скачать сертификат.'
-      : `Финальный экран откроется после прохождения всех 6 тестов. Сейчас завершено: ${testsDone}/6.`;
-  }
-  if (openCompletionBtn) {
-    openCompletionBtn.disabled = !complete;
-    openCompletionBtn.textContent = complete ? 'Открыть итог курса' : `Доступно после ${LESSONS.length} тестов`;
-  }
-
-  completionPanel.classList.toggle('hidden', !(show && complete));
-}
-function exportCertificate(){
-  const card = document.getElementById('certificateCard');
-  const rect = card.getBoundingClientRect();
-  const canvas = document.createElement('canvas');
-  const scale = 2;
-  canvas.width = rect.width * scale;
-  canvas.height = rect.height * scale;
-  const ctx = canvas.getContext('2d');
-  ctx.scale(scale, scale);
-  ctx.fillStyle = '#efe7d9';
-  ctx.fillRect(0,0,rect.width,rect.height);
-  ctx.strokeStyle = '#d8c8af';
-  ctx.lineWidth = 2;
-  ctx.strokeRect(12,12,rect.width-24,rect.height-24);
-  ctx.fillStyle = '#476166';
-  ctx.font = '12px Satoshi, Arial';
-  ctx.fillText('АКБФ АКАДЕМИЯ ИНВЕСТИЦИЙ', 28, 42);
-  ctx.fillStyle = '#213032';
-  ctx.font = 'bold 28px Satoshi, Arial';
-  ctx.fillText('Сертификат о прохождении', 28, 96);
-  ctx.font = 'bold 18px Satoshi, Arial';
-  ctx.fillText('Слушатель учебного модуля', 28, 150);
-  ctx.font = '16px Satoshi, Arial';
-  const lines = [
-    'Подтверждается завершение базового курса по инвестициям,',
-    'включающего темы по акциям, облигациям, фондам,',
-    'риск-профилю и ИИС-3.'
-  ];
-  lines.forEach((line,i)=> ctx.fillText(line, 28, 190 + i*26));
-  ctx.font = 'bold 14px Satoshi, Arial';
-  ctx.fillText('Формат', 28, rect.height - 72);
-  ctx.fillText('Статус', rect.width/2, rect.height - 72);
-  ctx.font = '16px Satoshi, Arial';
-  ctx.fillText('PWA-обучение', 28, rect.height - 44);
-  ctx.fillText(certificateStatus.textContent, rect.width/2, rect.height - 44);
-  const a = document.createElement('a');
-  a.href = canvas.toDataURL('image/png');
-  a.download = 'akbf-academy-certificate.png';
-  a.click();
-}
-
-const originalUpdateProgress = updateProgress;
-updateProgress = function(){
-  originalUpdateProgress();
-  if (typeof updateCompletionPanel === 'function') updateCompletionPanel(false);
-};
-
-// Финальная инициализация клиентской версии.
-hideSplash();
-if (!localStorage.getItem('akbf-academy-onboarding-seen')) showOnboarding();
-closeOnboardingBtn?.addEventListener('click', ()=>{ hideOnboarding(); localStorage.setItem('akbf-academy-onboarding-seen','1'); });
-startLearningBtn?.addEventListener('click', ()=>{ hideOnboarding(); localStorage.setItem('akbf-academy-onboarding-seen','1'); });
-onboardingBackdrop?.addEventListener('click', ()=>{ hideOnboarding(); localStorage.setItem('akbf-academy-onboarding-seen','1'); });
-showOnboardingBtn?.addEventListener('click', showOnboarding);
-openCompletionBtn?.addEventListener('click', ()=>{ if(!isCourseComplete()) return; updateCompletionPanel(true); completionPanel.scrollIntoView({behavior:'smooth', block:'start'}); });
-downloadCertificateBtn?.addEventListener('click', exportCertificate);
-scrollToLessonsBtn?.addEventListener('click', ()=> document.getElementById('lessonPanel')?.scrollIntoView({behavior:'smooth', block:'start'}));
-updateCompletionPanel(false);
+document.addEventListener('DOMContentLoaded', init);

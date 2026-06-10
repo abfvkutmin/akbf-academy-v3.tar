@@ -1,4 +1,4 @@
-const CACHE_NAME = 'akbf-academy-cache-final-20260609';
+const CACHE_NAME = 'akbf-academy-polished-v1';
 const OFFLINE_ASSETS = [
   './',
   './index.html',
@@ -13,7 +13,7 @@ self.addEventListener('install', event => {
   self.skipWaiting();
 });
 self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))));
+  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))));
   self.clients.claim();
 });
 self.addEventListener('fetch', event => {
